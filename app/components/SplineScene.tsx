@@ -25,7 +25,7 @@ export default function SplineScene() {
       {/* Spline background */}
       <div className="absolute inset-0 z-0">
         <Spline 
-          scene="https://prod.spline.design/HcYbZbIktMpMsHgm/scene.splinecode" 
+          scene="/spline/scene.splinecode" 
           className="w-full h-full" 
           onLoad={() => {
             setIsFading(true)

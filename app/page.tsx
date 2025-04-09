@@ -37,7 +37,7 @@ export default function Home() {
         <div className={`relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-center pointer-events-none transition-opacity duration-1000 ${
           showHero ? 'opacity-100' : 'opacity-0'
         }`}>
-          <div className="flex items-center w-full min-h-[300px] sm:min-h-[400px] sm:h-auto sm:w-[352px] lg:w-[440px] md:min-h-[584px] lg:min-h-[604px] bg-[#353535]/30 text-white backdrop-blur-[80px] rounded-[32px] sm:rounded-[48px] lg:rounded-[100px]">
+          <div className="flex items-center w-full min-h-[300px] sm:min-h-[400px] sm:h-auto sm:w-[352px] lg:w-[440px] md:min-h-[584px] lg:min-h-[604px] bg-[#000000]/30 text-white backdrop-blur-[80px] rounded-[32px] sm:rounded-[48px] lg:rounded-[100px]">
             <div className="block w-full h-full px-4 py-6 sm:px-6 sm:py-7 lg:px-10 lg:py-8 z-10 sm:flex sm:justify-start">
               <div className="pointer-events-auto">
                 <AnimatedSection delay={0.2}>
