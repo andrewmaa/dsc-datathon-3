@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,8 +16,16 @@ interface AnimatedSectionProps {
 }
 
 export function AnimatedSection({ children, delay = 0, className = '' }: AnimatedSectionProps) {
+  const pathname = usePathname()
+  const [key, setKey] = useState(0)
+
+  useEffect(() => {
+    setKey(prev => prev + 1)
+  }, [pathname])
+
   return (
     <motion.div
+      key={key}
       variants={fadeUpVariants}
       initial="hidden"
       whileInView="visible"

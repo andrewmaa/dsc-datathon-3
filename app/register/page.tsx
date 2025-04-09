@@ -228,9 +228,21 @@ export default function RegisterPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#0acdf0] text-black font-['Suisse_Intl'] py-4 px-6 rounded-lg hover:bg-[#0acdf0]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="scale-[1.01] inline-block uppercase font-mono text-sm/none outline-none disabled:border group/cta relative border-2 transition-colors border-transparent rounded-[64px] bg-white text-black hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] py-3 px-8 w-full justify-center cursor-pointer"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Register'}
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="animate-spin">⟳</span>
+                        <span>SUBMITTING...</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <span>SUBMIT</span>
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 transition-transform duration-500 group-hover/cta:translate-x-1">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M8.30724 2.86177C8.56759 2.60142 8.9897 2.60142 9.25005 2.86177L13.9167 7.52843C14.1771 7.78878 14.1771 8.21089 13.9167 8.47124L9.25005 13.1379C8.9897 13.3983 8.56759 13.3983 8.30724 13.1379C8.04689 12.8776 8.04689 12.4554 8.30724 12.1951L11.8358 8.6665H4.11198C3.74379 8.6665 3.44531 8.36803 3.44531 7.99984C3.44531 7.63165 3.74379 7.33317 4.11198 7.33317H11.8358L8.30724 3.80458C8.04689 3.54423 8.04689 3.12212 8.30724 2.86177Z" fill="currentColor"/>
+                        </svg>
+                      </span>
+                    )}
                   </button>
                 </div>
               </div>

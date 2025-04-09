@@ -92,7 +92,10 @@ export default function Header() {
                   </li>
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
-                      <Link href="/register" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
+                      <Link 
+                        href="/register" 
+                        className="bg-white text-black hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] font-mono transition-all relative flex items-center gap-1.5 py-2 px-4 rounded-sm parent-link"
+                      >
                         <span className="flex-shrink-0">Register</span>
                       </Link>
                     </div>

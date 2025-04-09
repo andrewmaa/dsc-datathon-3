@@ -68,31 +68,48 @@ function LoginForm() {
                     Enter the password to access the event details.
                   </p>
                 </div>
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                  <div>
-                    <label htmlFor="password" className="block font-['Suisse_Intl'] text-sm mb-2">
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      id="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-white focus:outline-none"
-                      required
-                      placeholder="Enter password"
-                    />
+                <form onSubmit={handleSubmit} className="mt-8">
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
+                        Password
+                      </label>
+                      <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#0acdf0] focus:border-transparent"
+                        placeholder="Enter password"
+                      />
+                    </div>
                     {error && (
-                      <p className="text-red-400 text-sm mt-2">{error}</p>
+                      <div className="text-red-400 text-sm">
+                        {error}
+                      </div>
                     )}
+                    <button
+                      type="submit"
+                      className="group relative w-full overflow-hidden rounded-full bg-white text-black px-6 py-3 transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/20"
+                    >
+                      <div className="relative z-10 flex items-center justify-center gap-2">
+                        <span>Login</span>
+                        <svg
+                          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
+                      </div>
+                    </button>
                   </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-white text-black font-['Suisse_Intl'] py-4 px-6 rounded-lg hover:bg-white/90 transition-colors cursor-pointer"
-                  >
-                    Login
-                  </button>
                 </form>
               </AnimatedSection>
             </div>
