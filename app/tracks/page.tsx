@@ -67,7 +67,7 @@ export default function TracksPage() {
 
             <div className="md:basis-1/2 max-w-md">
               <AnimatedSection delay={0.2}>
-                <div className="font-['Suisse_Intl'] text-[18px] leading-[22px] space-y-4">
+                <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
                     Choose your path and dive deep into a specific area of data science. Each track offers unique challenges and learning opportunities.
                   </p>
@@ -93,12 +93,12 @@ export default function TracksPage() {
                     <h3 className="font-['Editorial_Old'] text-2xl mb-4 italic [font-feature-settings:'dlig'_1]">
                       {track.title}
                     </h3>
-                    <p className="font-['Suisse_Intl'] text-white/70 text-sm mb-6">
+                    <p className="font-['SuisseIntl'] text-white/70 text-sm mb-6">
                       {track.description}
                     </p>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-['Suisse_Intl'] text-sm text-white/50 mb-2">Skills</h4>
+                        <h4 className="font-['SuisseIntl'] text-sm text-white/50 mb-2">Skills</h4>
                         <div className="flex flex-wrap gap-2">
                           {track.skills.map((skill) => (
                             <span
@@ -111,7 +111,7 @@ export default function TracksPage() {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-['Suisse_Intl'] text-sm text-white/50 mb-2">Mentors</h4>
+                        <h4 className="font-['SuisseIntl'] text-sm text-white/50 mb-2">Mentors</h4>
                         <div className="flex flex-wrap gap-2">
                           {track.mentors.map((mentor) => (
                             <span

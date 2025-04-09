@@ -52,7 +52,7 @@ function LoginForm() {
                 <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight tracking-[-0.04em] [font-feature-settings:'dlig'_1]">
                   Login
                 </h2>
-                <p className="font-['Suisse_Intl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
+                <p className="font-['SuisseIntl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
                   We&apos;ll be releasing more details about the event soon. In the meantime, you can <a href="/register" className="underline underline-offset-2 decoration-1 hover:decoration-2">register for the event</a> and follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
                 </p>
                 <div className="mt-8">
@@ -63,7 +63,7 @@ function LoginForm() {
 
             <div className="md:basis-1/2 max-w-md">
               <AnimatedSection delay={0.2}>
-                <div className="font-['Suisse_Intl'] text-[18px] leading-[22px] space-y-4">
+                <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
                     Enter the password to access the event details.
                   </p>
@@ -71,7 +71,7 @@ function LoginForm() {
                 <form onSubmit={handleSubmit} className="mt-8">
                   <div className="space-y-4">
                     <div>
-                      <label htmlFor="password" className="block font-['Suisse_Intl'] text-sm mb-2">
+                      <label htmlFor="password" className="block font-['SuisseIntl'] text-sm mb-2">
                         Password
                       </label>
                       <input

@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -16,19 +15,37 @@ interface AnimatedSectionProps {
 }
 
 export function AnimatedSection({ children, delay = 0, className = '' }: AnimatedSectionProps) {
-  const pathname = usePathname()
+  const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setIsVisible(false)
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [pathname])
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
 
   return (
     <motion.div
+      ref={ref}
       variants={fadeUpVariants}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}

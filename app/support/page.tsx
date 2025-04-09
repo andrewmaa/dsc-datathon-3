@@ -28,7 +28,7 @@ export default function SupportPage() {
 
             <div className="md:basis-1/2 max-w-md"> {/* Added max-w-md like the HTML */}
               <AnimatedSection delay={0.2}> {/* Added delay */}
-                <div className="font-['Suisse_Intl'] text-[18px] leading-[22px] space-y-4"> {/* Applied specific size/leading */}
+                <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4"> {/* Applied specific size/leading */}
                   <p>
                     It&apos;s easy to get lost in the data. 
                     If you experience any issues, please reach out to us and we&apos;ll do our best to help.
@@ -86,7 +86,7 @@ export default function SupportPage() {
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
                     <div className="absolute inset-x-0 top-0 border-t border-white/20 group-hover:border-white transition-colors duration-300" />
-                    <AccordionTrigger className="font-['Suisse_Intl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
+                    <AccordionTrigger className="font-['SuisseIntl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base pb-8">
@@ -123,7 +123,7 @@ export default function SupportPage() {
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
                     <div className="absolute inset-x-0 top-0 border-t border-white/20 group-hover:border-white transition-colors duration-300" />
-                    <AccordionTrigger className="font-['Suisse_Intl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
+                    <AccordionTrigger className="font-['SuisseIntl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base pb-8">
@@ -160,7 +160,7 @@ export default function SupportPage() {
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
                     <div className="absolute inset-x-0 top-0 border-t border-white/20 group-hover:border-white transition-colors duration-300" />
-                    <AccordionTrigger className="font-['Suisse_Intl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
+                    <AccordionTrigger className="font-['SuisseIntl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base pb-8">

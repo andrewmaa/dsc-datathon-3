@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     console.log('Request body:', body)
     
     // Validate required fields
-    const requiredFields = ['name', 'email', 'university', 'major', 'year', 'experience', 'whyAttend']
+    const requiredFields = ['name', 'email', 'netid', 'year', 'major', 'experienceLevelPython', 'experienceLevelML', 'experienceLevelDeepL', 'skills', 'skillsToGain', 'hasTeammates', 'confirmation']
     const missingFields = requiredFields.filter(field => !body[field])
     
     if (missingFields.length > 0) {
@@ -20,9 +20,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Add timestamp
+    // Add timestamp and format major and skills
     const data = {
       ...body,
+      major: body.major.join(', '),
+      skills: body.skills.join(', '),
       timestamp: new Date().toISOString(),
     }
 

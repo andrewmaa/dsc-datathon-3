@@ -60,9 +60,9 @@ export default function Header() {
                 )}
               </button>
               <Link href="/" className="flex items-center">
-                <span className="text-white text-2xl font-book font-['Suisse_Intl'] lowercase flex items-center mr-3">dsc</span>
-                <span className="text-white text-2xl font-[200] flex items-center" style={{ marginTop: '-0.2em', marginRight: '0.5em' }}>×</span>
-                <span className="text-white text-2xl font-book font-['Suisse_Intl'] lowercase flex items-center mr-7" style={{ marginTop: '-0.1em'}}>???</span>
+                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-3">dsc</span>
+                <span className="text-white text-3xl font-[300] flex items-center" style={{ marginTop: '-0.2em', marginRight: '0.5em' }}>×</span>
+                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-7" style={{ marginTop: '-0.1em'}}>???</span>
               </Link>
             </div>
 
@@ -111,7 +111,7 @@ export default function Header() {
                       <div className="relative uppercase">
                         <button
                           onClick={handleLogout}
-                          className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link cursor-pointer"
+                          className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-3 px-1.5 rounded-sm parent-link cursor-pointer"
                         >
                           <span className="flex-shrink-0">LOGOUT</span>
                         </button>

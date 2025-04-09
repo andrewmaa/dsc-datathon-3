@@ -3,20 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const numberToWords = (num: number): string => {
-  const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
-    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-  const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
-
-  if (num < 20) return ones[num]
-  if (num < 100) {
-    const ten = Math.floor(num / 10)
-    const one = num % 10
-    return tens[ten] + (one ? '-' + ones[one] : '')
-  }
-  return num.toString()
-}
-
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -65,12 +51,12 @@ export default function CountdownTimer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="font-['Suisse_Intl'] text-xl md:text-xl font-medium text-white w-full text-center"
+                className="font-['SuisseIntl'] text-2xl md:text-3xl font-medium text-white w-full text-center tabular-nums"
               >
-                {numberToWords(timeLeft.days)}
+                {timeLeft.days.toString().padStart(2, '0')}
               </motion.div>
             </AnimatePresence>
-            <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">days</div>
+            <div className="font-['SuisseIntl'] text-md text-[#0acdf0]/60 w-full text-center">days</div>
           </div>
           <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
@@ -80,12 +66,12 @@ export default function CountdownTimer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="font-['Suisse_Intl'] text-xl md:text-xl font-medium text-white w-full text-center"
+                className="font-['SuisseIntl'] text-2xl md:text-3xl font-medium text-white w-full text-center tabular-nums"
               >
-                {numberToWords(timeLeft.hours)}
+                {timeLeft.hours.toString().padStart(2, '0')}
               </motion.div>
             </AnimatePresence>
-            <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">hours</div>
+            <div className="font-['SuisseIntl'] text-md text-[#0acdf0]/60 w-full text-center">hours</div>
           </div>
           <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
@@ -95,12 +81,12 @@ export default function CountdownTimer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="font-['Suisse_Intl'] text-xl md:text-xl font-medium text-white w-full text-center"
+                className="font-['SuisseIntl'] text-2xl md:text-3xl font-medium text-white w-full text-center tabular-nums"
               >
-                {numberToWords(timeLeft.minutes)}
+                {timeLeft.minutes.toString().padStart(2, '0')}
               </motion.div>
             </AnimatePresence>
-            <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">minutes</div>
+            <div className="font-['SuisseIntl'] text-md text-[#0acdf0]/60 w-full text-center">minutes</div>
           </div>
           <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
@@ -110,18 +96,18 @@ export default function CountdownTimer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="font-['Suisse_Intl'] text-xl md:text-xl font-medium text-white w-full text-center"
+                className="font-['SuisseIntl'] text-2xl md:text-3xl font-medium text-white w-full text-center tabular-nums"
               >
-                {numberToWords(timeLeft.seconds)}
+                {timeLeft.seconds.toString().padStart(2, '0')}
               </motion.div>
             </AnimatePresence>
-            <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">seconds</div>
+            <div className="font-['SuisseIntl'] text-md text-[#0acdf0]/60 w-full text-center">seconds</div>
           </div>
         </div>
         <br />
         <div className="font-['Editorial_Old'] font-ultralight italic text-2xl text-white w-full text-center [font-feature-settings:'dlig'_1]">until the datathon!</div>
         <br />
-        <div className="font-['Suisse_Intl'] text-sm/6 text-white/50 w-full text-center">Location: Silver Center for Arts and Sciences</div>
+        <div className="font-['SuisseIntl'] text-sm/6 text-white/50 w-full text-center">Location: Silver Center for Arts and Sciences</div>
         <div className="font-['Geist'] text-sm text-white/50 w-full text-center">
          April 25 9:00 AM - April 26 1:00 PM
         </div>

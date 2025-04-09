@@ -95,6 +95,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -102,6 +103,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-BlackIt.woff2') format('woff2');
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -109,6 +111,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -116,6 +119,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-BoldIt.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -123,6 +127,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Book.woff2') format('woff2');
   font-weight: var(--font-weight-book);
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -130,6 +135,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-BookIt.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -137,6 +143,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Hairline.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -144,6 +151,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-HairlineIt.woff2') format('woff2');
   font-weight: 100;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -151,6 +159,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -158,6 +167,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-LightIt.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -165,6 +175,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Medium.woff2') format('woff2');
   font-weight: var(--font-weight-medium);
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -172,6 +183,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-MediumIt.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -179,6 +191,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -186,6 +199,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-RegularIt.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -193,6 +207,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Semibold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -200,6 +215,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-SemiboldIt.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -207,6 +223,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-Thin.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -214,6 +231,7 @@
   src: url('https://andrewma.b-cdn.net/fonts/dsc/SuisseIntl-ThinIt.woff2') format('woff2');
   font-weight: 200;
   font-style: italic;
+  font-display: swap;
 }
 
 @custom-variant dark (&:is(.dark *));

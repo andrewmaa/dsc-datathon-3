@@ -11,9 +11,9 @@ export default function Footer() {
           <div className="max-w-[500px] w-full grid grid-cols-1 gap-10">
             <Link href="/" className="flex items-center">
               <div className="flex items-center gap-4">
-                <span className="text-white text-4xl font-book font-['Suisse_Intl'] lowercase flex items-center">dsc</span>
-              <span className="text-white text-6xl font-[200] flex items-center" style={{ marginTop: '-0.2em' }}>×</span>
-                <span className="text-white text-4xl font-book font-['Suisse_Intl'] lowercase flex items-center">???</span>
+                <span className="text-white text-4xl font-book font-['SuisseIntl'] lowercase flex items-center">dsc</span>
+              <span className="text-white text-4xl font-[300] flex items-center" style={{ marginTop: '-0.2em' }}>×</span>
+                <span className="text-white text-4xl font-book font-['SuisseIntl'] lowercase flex items-center">???</span>
               </div>
             </Link>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
         </section>
 
         <section className="flex flex-col justify-between gap-10 md:h-[320px] w-full max-w-md">
-          <div className="block font-['Suisse_Intl']">
+          <div className="block font-['SuisseIntl']">
             <h3 className="text-lg/none mb-6">Ready to join us?</h3>
             <Link
               href="/register"

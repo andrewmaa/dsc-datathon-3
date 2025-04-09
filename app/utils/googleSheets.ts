@@ -4,13 +4,20 @@ import { JWT } from 'google-auth-library'
 type RegistrationData = {
   name: string
   email: string
-  university: string
-  major: string
+  netid: string
   year: string
-  teamName?: string
-  dietaryRestrictions?: string
-  experience: string
-  whyAttend: string
+  major: string
+  customMajor?: string
+  experienceLevelPython: number
+  experienceLevelML: number
+  experienceLevelDeepL: number
+  skills: string
+  skillsToGain: string
+  hasTeammates: string
+  netid1: string
+  netid2: string
+  netid3: string
+  confirmation: string
   timestamp: string
 }
 
@@ -39,6 +46,9 @@ if (!process.env.GOOGLE_PRIVATE_KEY) {
 export async function appendToSheet(data: RegistrationData) {
   try {
     console.log('Initializing Google Sheets connection...')
+    console.log('Using SPREADSHEET_ID:', SPREADSHEET_ID)
+    console.log('Using service account email:', process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL)
+    
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID!, serviceAccountAuth)
     
     console.log('Loading document info...')
@@ -49,18 +59,51 @@ export async function appendToSheet(data: RegistrationData) {
     const sheet = doc.sheetsByIndex[0]
     console.log('Using sheet:', sheet.title)
 
-    // First, set the header row
-    console.log('Setting header row with keys:', Object.keys(data))
-    await sheet.setHeaderRow(Object.keys(data))
+    // Set the header row with descriptive labels
+    const headerRow = [
+      'name',
+      'email',
+      'netid',
+      'year',
+      'major',
+      'customMajor',
+      'experienceLevelPython',
+      'experienceLevelML',
+      'experienceLevelDeepL',
+      'skills',
+      'skillsToGain',
+      'hasTeammates',
+      'netid1',
+      'netid2',
+      'netid3',
+      'confirmation',
+      'timestamp'
+    ]
+    await sheet.setHeaderRow(headerRow)
+
+    // Convert numeric fields to strings
+    const formattedData = {
+      ...data,
+      experienceLevelPython: data.experienceLevelPython.toString(),
+      experienceLevelML: data.experienceLevelML.toString(),
+      experienceLevelDeepL: data.experienceLevelDeepL.toString(),
+    }
+
+    // Add a console log to verify the data being processed
+    console.log('Data to append:', formattedData)
 
     // Then append the new row
-    console.log('Appending new row with data:', data)
-    await sheet.addRow(data as Record<string, string>)
+    console.log('Appending new row with data:', formattedData)
+    await sheet.addRow(formattedData as Record<string, string>)
     console.log('Row appended successfully')
 
     return { success: true }
   } catch (error) {
     console.error('Detailed Google Sheets error:', error)
+    if (error instanceof Error) {
+      console.error('Error message:', error.message)
+      console.error('Error stack:', error.stack)
+    }
     throw error
   }
 } 

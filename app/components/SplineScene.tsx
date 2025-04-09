@@ -2,10 +2,17 @@
 
 import { useState } from 'react'
 import Spline from '@splinetool/react-spline'
+import { usePathname } from 'next/navigation'
 
 export default function SplineScene() {
   const [isLoading, setIsLoading] = useState(true)
   const [isFading, setIsFading] = useState(false)
+  const pathname = usePathname()
+
+  // Only render on the home page
+  if (pathname !== '/') {
+    return null
+  }
 
   return (
     <>

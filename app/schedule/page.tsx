@@ -155,7 +155,7 @@ export default function SchedulePage() {
 
             <div className="md:basis-1/2 max-w-md">
               <AnimatedSection delay={0.2}>
-                <div className="font-['Suisse_Intl'] text-[18px] leading-[22px] space-y-4">
+                <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
                     Join us for an exciting weekend of hacking, learning, and networking. Here&apos;s what to expect during the event.
                   </p>
@@ -171,7 +171,7 @@ export default function SchedulePage() {
                 <button
                   key={index}
                   onClick={() => setActiveDay(index)}
-                  className={`px-6 py-3 rounded-full font-['Suisse_Intl'] text-sm transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-full font-['SuisseIntl'] text-sm transition-all duration-300 ${
                     activeDay === index
                       ? 'bg-white text-[#191919]'
                       : 'bg-transparent text-white border border-white/20 hover:border-white/40'
@@ -197,7 +197,7 @@ export default function SchedulePage() {
                     <div className="relative p-6">
                       <div className="flex gap-6">
                         <div className="w-24 flex-shrink-0">
-                          <div className="font-['Suisse_Intl'] text-[#0acdf0] text-sm">
+                          <div className="font-['SuisseIntl'] text-[#0acdf0] text-sm">
                             {item.time}
                           </div>
                         </div>
@@ -205,11 +205,11 @@ export default function SchedulePage() {
                           <div className="font-['Editorial_Old'] text-xl mb-2">
                             {item.title}
                           </div>
-                          <div className="font-['Suisse_Intl'] text-white/70 text-sm">
+                          <div className="font-['SuisseIntl'] text-white/70 text-sm">
                             {item.description}
                           </div>
                           {item.location && (
-                            <div className="font-['Suisse_Intl'] text-white/50 text-xs mt-2">
+                            <div className="font-['SuisseIntl'] text-white/50 text-xs mt-2">
                               {item.location}
                             </div>
                           )}

@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Allow access to registration and login pages
-  if (pathname === '/register' || pathname === '/login') {
+  if (pathname === '/register' || pathname === '/login' || pathname === '/') {
     return NextResponse.next()
   }
 
@@ -28,8 +28,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - public folder
+     * - spline directory within public folder
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|public).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|spline).*)',
   ],
 } 
