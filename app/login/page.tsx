@@ -53,7 +53,7 @@ function LoginForm() {
                   Login
                 </h2>
                 <p className="font-['Suisse_Intl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
-                  We&apos;ll be releasing more details about the event soon. In the meantime, you can follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
+                  We&apos;ll be releasing more details about the event soon. In the meantime, you can <a href="/register" className="underline underline-offset-2 decoration-1 hover:decoration-2">register for the event</a> and follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
                 </p>
                 <div className="mt-8">
                   <CountdownTimer />

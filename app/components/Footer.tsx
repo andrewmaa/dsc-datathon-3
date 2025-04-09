@@ -9,13 +9,15 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-start gap-x-10 gap-y-28 px-4 sm:px-6 lg:px-10">
         <section className="flex flex-col justify-between gap-10 md:h-[320px] order-last md:order-first">
           <div className="max-w-[500px] w-full grid grid-cols-1 gap-10">
-            <div className="flex items-center gap-4">
-              <span className="text-white text-4xl font-bold font-['Suisse_Intl'] lowercase flex items-center">dsc</span>
+            <Link href="/" className="flex items-center">
+              <div className="flex items-center gap-4">
+                <span className="text-white text-4xl font-book font-['Suisse_Intl'] lowercase flex items-center">dsc</span>
               <span className="text-white text-6xl font-[200] flex items-center" style={{ marginTop: '-0.2em' }}>×</span>
-              <span className="text-white text-4xl font-bold font-['Geist'] lowercase flex items-center">???</span>
-            </div>
+                <span className="text-white text-4xl font-book font-['Suisse_Intl'] lowercase flex items-center">???</span>
+              </div>
+            </Link>
           </div>
-          <p className="text-xs/none text-left font-mono uppercase text-white-40">
+          <p className="text-xs/6 text-left font-mono uppercase text-white-40 ">
             © 2025 Data Science Club @ NYU. Made with ❤️ by <a href="https://www.andrewma.io" target="_blank" className="hover:underline underline-offset-2">Andrew Ma</a>.
           </p>
         </section>

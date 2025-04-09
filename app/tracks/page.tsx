@@ -90,7 +90,7 @@ export default function TracksPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <h3 className="font-['Editorial_Old'] text-2xl mb-4 [font-feature-settings:'dlig'_1]">
+                    <h3 className="font-['Editorial_Old'] text-2xl mb-4 italic [font-feature-settings:'dlig'_1]">
                       {track.title}
                     </h3>
                     <p className="font-['Suisse_Intl'] text-white/70 text-sm mb-6">

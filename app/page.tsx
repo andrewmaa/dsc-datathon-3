@@ -150,7 +150,7 @@ export default function Home() {
               <AnimatedSection delay={0.2}>
               <div className="lg:max-w-sm flex md:grid lg:flex flex-col grid-cols-2">
                   <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-black tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
-                    More than just <span className="italic">data analysis.</span>.
+                    More than just <span className="italic">data analysis.</span>
                   </h2>
                   <div className="grid grid-cols-1 gap-10 md:gap-6 lg:gap-10">
                     <div className="font-['Suisse_Intl'] text-sm md:text-base text-black">
@@ -205,8 +205,8 @@ export default function Home() {
                       whileHover={{ backgroundColor: "#000000", color: "#FFFFFF" }} 
                       transition={{ duration: 0.3 }} 
                     >
-                      <h3 className="font-semibold text-base sm:text-lg mb-2">{track.title}</h3> 
-                      <p className="font-['Suisse_Intl'] text-sm flex-grow">{track.description}</p> 
+                      <h3 className="font-semibold text-sm sm:text-lg mb-2">{track.title}</h3> 
+                      <p className="font-mono text-sm flex-grow">{track.description}</p> 
                     </motion.div>
                   ))}
                 </div>

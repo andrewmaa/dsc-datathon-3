@@ -120,6 +120,11 @@ export default function CountdownTimer() {
         </div>
         <br />
         <div className="font-['Editorial_Old'] font-ultralight italic text-2xl text-white w-full text-center [font-feature-settings:'dlig'_1]">until the datathon!</div>
+        <br />
+        <div className="font-['Suisse_Intl'] text-sm/6 text-white/50 w-full text-center">Location: Silver Center for Arts and Sciences</div>
+        <div className="font-['Geist'] text-sm text-white/50 w-full text-center">
+         April 25 9:00 AM - April 26 1:00 PM
+        </div>
       </motion.div>
     </div>
   )
