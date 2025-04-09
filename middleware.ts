@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
   // Always check for authentication for all other routes
   if (!authToken) {
     const loginUrl = new URL('/login', request.url)
-    loginUrl.searchParams.set('from', pathname)
+    loginUrl.searchParams.set('redirectTo', pathname)
     return NextResponse.redirect(loginUrl)
   }
 

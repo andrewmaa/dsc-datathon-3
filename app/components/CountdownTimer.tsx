@@ -51,13 +51,13 @@ export default function CountdownTimer() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <motion.div 
-        className="bg-[#0acdf0]/10 border border-[#0acdf0] p-8 sm:p-10 rounded-lg w-full max-w-3xl"
+        className="bg-[#0acdf0]/10 border border-[#0acdf0] p-8 rounded-lg w-full max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <div className="flex items-center justify-center gap-4 md:gap-6">
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
               <motion.div
                 key={timeLeft.days}
@@ -72,7 +72,7 @@ export default function CountdownTimer() {
             </AnimatePresence>
             <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">days</div>
           </div>
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
               <motion.div
                 key={timeLeft.hours}
@@ -87,7 +87,7 @@ export default function CountdownTimer() {
             </AnimatePresence>
             <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">hours</div>
           </div>
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
               <motion.div
                 key={timeLeft.minutes}
@@ -102,7 +102,7 @@ export default function CountdownTimer() {
             </AnimatePresence>
             <div className="font-['Suisse_Intl'] text-md text-[#0acdf0]/60 w-full text-center">minutes</div>
           </div>
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center text-center w-24">
             <AnimatePresence mode="wait">
               <motion.div
                 key={timeLeft.seconds}

@@ -17,23 +17,21 @@ interface AnimatedSectionProps {
 
 export function AnimatedSection({ children, delay = 0, className = '' }: AnimatedSectionProps) {
   const pathname = usePathname()
-  const [key, setKey] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setKey(prev => prev + 1)
+    setIsVisible(false)
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 100)
+    return () => clearTimeout(timer)
   }, [pathname])
 
   return (
     <motion.div
-      key={key}
       variants={fadeUpVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ 
-        once: true,
-        margin: "-100px",
-        amount: 0.2
-      }}
+      animate={isVisible ? "visible" : "hidden"}
       transition={{ 
         duration: 0.4,
         delay: delay,

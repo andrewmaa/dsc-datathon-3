@@ -41,23 +41,23 @@ export default function Home() {
             <div className="block w-full h-full px-4 py-6 sm:px-6 sm:py-7 lg:px-10 lg:py-8 z-10 sm:flex sm:justify-start">
               <div className="pointer-events-auto">
                 <AnimatedSection delay={0.2}>
-                  <h1 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-6 sm:mb-8">
+                  <h1 className="font-['Editorial_Old'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 sm:mb-6 md:mb-8">
                     Find answers from 
                     <span className="italic"> raw data.</span>
                   </h1>
                 </AnimatedSection>
 
-                <div className="font-['Suisse_Intl'] text-sm md:text-base text-white [font-feature-settings:'dlig'_1] space-y-6 sm:space-y-8">
+                <div className="font-['Suisse_Intl'] text-sm md:text-base text-white [font-feature-settings:'dlig'_1] space-y-4 sm:space-y-6 md:space-y-8">
                   <AnimatedSection delay={0.4}>
-                    <p>Take unstructured data and turn it into actionable insights. Our datathon challenges you to build solutions that matter, using cutting-edge tools and techniques in data science and machine learning.</p>
+                    <p className="text-sm sm:text-base">Take unstructured data and turn it into actionable insights. Our datathon challenges you to build solutions that matter, using cutting-edge tools and techniques in data science and machine learning.</p>
                   </AnimatedSection>
                   <AnimatedSection delay={0.6}>
-                    <p>Join us in creating technology that makes a real difference.</p>
+                    <p className="text-sm sm:text-base">Join us in creating technology that makes a real difference.</p>
                   </AnimatedSection>
                 </div>
 
                 {/* Register button */}
-                <AnimatedSection delay={0.8} className="mt-6 sm:mt-8">
+                <AnimatedSection delay={0.8} className="mt-4 sm:mt-6 md:mt-8">
                   <Link
                     href="#register"
                     className="scale-[1.01] inline-block uppercase font-mono text-sm/none outline-none disabled:border group/cta relative border-2 transition-colors border-transparent rounded-[64px]"
@@ -81,12 +81,12 @@ export default function Home() {
       <section className="relative z-8" style={{ backgroundColor: '#408cc2' }}>
         <div className="h-full flex flex-col lg:flex-row">
           <div className="basis-4/7 h-full group">
-            <div className="inline-flex w-full h-full relative p-6 sm:p-8 rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
-              <div className="block relative z-8 w-full h-full rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] overflow-hidden bg-white/10 backdrop-blur-sm">
-                <div className="flex flex-col justify-center items-center h-full p-6 text-white">
-                  <div className="text-center mb-6">
+            <div className="inline-flex w-full h-full relative p-4 sm:p-6 md:p-8 rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
+              <div className="block relative z-8 w-full h-full rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] overflow-hidden bg-white/10 backdrop-blur-sm">
+                <div className="flex flex-col justify-center items-center h-full p-4 sm:p-6 text-white">
+                  <div className="text-center mb-4 sm:mb-6">
                     <AnimatedSection delay={0.2}>
-                      <h3 className="font-['Editorial_Old'] text-3xl md:text-4xl lg:text-5xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
+                      <h3 className="font-['Editorial_Old'] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 sm:mb-6 md:mb-8">
                         DSC@NYU <br /> Datathon
                       </h3>
                     </AnimatedSection>
@@ -103,14 +103,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 flex justify-center items-center h-full pt-2 pb-10 md:pb-16 lg:py-10">
+          <div className="flex-1 flex justify-center items-center h-full pt-4 pb-8 sm:pt-6 sm:pb-10 md:pb-16 lg:py-10">
             <div className="px-4 sm:px-6">
               <AnimatedSection delay={0.2}>
                 <div className="lg:max-w-sm flex flex-col md:grid lg:flex lg:flex-col grid-cols-2 lg:ml-auto">
-                  <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 md:mb-8">
+                  <h2 className="font-['Editorial_Old'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 sm:mb-6 md:mb-8">
                     Transform data into <span className="italic">insights</span>.
                   </h2>
-                  <div className="grid grid-cols-1 gap-10 md:gap-6 lg:gap-10">
+                  <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10">
                     <div className="font-['Suisse_Intl'] text-sm md:text-base text-white lg:text-left">
                       <p>Take unstructured data and turn it into actionable insights. Our datathon challenges you to build solutions that matter, using cutting-edge tools and techniques in data science and machine learning.</p>
                       <p className="mt-4">Join us in creating technology that makes a real difference.</p>
@@ -140,61 +140,21 @@ export default function Home() {
       {/* Second Text with Asset Section */}
       <section 
         id="tracks-section"
-        className="relative z-10" 
+        className="relative z-10 py-8 sm:py-12 md:py-16 lg:py-20" 
         style={{ backgroundColor: '#faefd9' }}
       >
-        <div className="h-full flex flex-col lg:flex-row">
-          <div className="basis-3/5 h-full group lg:order-last">
-            <div className="inline-flex w-full h-full relative p-4 sm:p-6 rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
-              <div className="block relative z-10 w-full h-full rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] p-6 sm:p-8 flex items-center justify-center">
-                <AnimatedSection delay={0.4}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {[ // Sample Tracks Data
-                      {
-                        title: "Track 1: Predictive Insights",
-                        description: "Develop models to predict future trends based on historical data. Focus on time series analysis and forecasting techniques."
-                      },
-                      {
-                        title: "Track 2: NLP for Social Good",
-                        description: "Analyze text data to uncover insights related to social issues. Utilize sentiment analysis, topic modeling, and text classification."
-                      },
-                      {
-                        title: "Track 3: Computer Vision Challenge",
-                        description: "Build systems that can interpret and understand visual information from images or videos. Explore object detection, image segmentation, and recognition."
-                      },
-                       {
-                        title: "Track 4: Open Challenge",
-                        description: "Bring your own dataset and problem! Propose and tackle a unique data science challenge that excites you."
-                      }
-                    ].map((track, index) => (
-                      <motion.div 
-                        key={index} 
-                        className="p-6 rounded-xl backdrop-blur-sm h-full flex flex-col"
-                        initial={{ backgroundColor: "rgba(0, 0, 0, 0.05)", color: "#000000" }}
-                        whileHover={{ backgroundColor: "#000000", color: "#FFFFFF" }} 
-                        transition={{ duration: 0.3 }} 
-                      >
-                        <h3 className="font-semibold text-lg mb-2">{track.title}</h3> 
-                        <p className="font-['Suisse_Intl'] text-sm flex-grow">{track.description}</p> 
-                      </motion.div>
-                    ))}
-                  </div>
-                </AnimatedSection>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 flex justify-center items-center h-full pt-3 pb-14 md:pb-20 lg:py-14 lg:order-first">
-            <div className="px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Content on the left */}
+            <div className="w-full lg:w-1/2">
               <AnimatedSection delay={0.2}>
-                <div className="lg:max-w-sm flex flex-col">
+              <div className="lg:max-w-sm flex md:grid lg:flex flex-col grid-cols-2">
                   <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-black tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
-                    More than just <span className="italic">data analysis</span>.
+                    More than just <span className="italic">data analysis.</span>.
                   </h2>
-                  <div className="grid grid-cols-1 gap-8">
+                  <div className="grid grid-cols-1 gap-10 md:gap-6 lg:gap-10">
                     <div className="font-['Suisse_Intl'] text-sm md:text-base text-black">
-                      <p>Transform your data analysis with our comprehensive toolkit. Build models that not only process data but understand context, create visualizations that tell stories, and develop solutions that scale.</p>
-                      <p className="mt-4">Add machine learning for insights that would make a data scientist proud.</p>
+                      <p>Transform your data analysis with our comprehensive toolkit. Build models that not only process data but understand context, create visualizations that tell stories, and develop solutions that scale. <br /><br />Add machine learning for insights that would make a data scientist proud.</p>
                     </div>
                     
                     <div>
@@ -212,6 +172,43 @@ export default function Home() {
                       </Link>
                     </div>
                   </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Track grid on the right */}
+            <div className="w-full lg:w-1/2">
+              <AnimatedSection delay={0.4}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  {[ // Sample Tracks Data
+                    {
+                      title: "Track 1: Predictive Insights",
+                      description: "Develop models to predict future trends based on historical data. Focus on time series analysis and forecasting techniques."
+                    },
+                    {
+                      title: "Track 2: NLP for Social Good",
+                      description: "Analyze text data to uncover insights related to social issues. Utilize sentiment analysis, topic modeling, and text classification."
+                    },
+                    {
+                      title: "Track 3: Computer Vision Challenge",
+                      description: "Build systems that can interpret and understand visual information from images or videos. Explore object detection, image segmentation, and recognition."
+                    },
+                    {
+                      title: "Track 4: Open Challenge",
+                      description: "Bring your own dataset and problem! Propose and tackle a unique data science challenge that excites you."
+                    }
+                  ].map((track, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="p-4 sm:p-6 rounded-xl backdrop-blur-sm h-full flex flex-col bg-white/50 hover:bg-black/5 transition-colors duration-300"
+                      initial={{ backgroundColor: "rgba(0, 0, 0, 0.05)", color: "#000000" }}
+                      whileHover={{ backgroundColor: "#000000", color: "#FFFFFF" }} 
+                      transition={{ duration: 0.3 }} 
+                    >
+                      <h3 className="font-semibold text-base sm:text-lg mb-2">{track.title}</h3> 
+                      <p className="font-['Suisse_Intl'] text-sm flex-grow">{track.description}</p> 
+                    </motion.div>
+                  ))}
                 </div>
               </AnimatedSection>
             </div>
