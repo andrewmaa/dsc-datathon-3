@@ -1,6 +1,19 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import { JWT } from 'google-auth-library'
 
+type RegistrationData = {
+  name: string
+  email: string
+  university: string
+  major: string
+  year: string
+  teamName?: string
+  dietaryRestrictions?: string
+  experience: string
+  whyAttend: string
+  timestamp: string
+}
+
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 const serviceAccountAuth = new JWT({
   email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
@@ -23,7 +36,7 @@ if (!process.env.GOOGLE_PRIVATE_KEY) {
   throw new Error('GOOGLE_PRIVATE_KEY environment variable is not set')
 }
 
-export async function appendToSheet(data: Record<string, any>) {
+export async function appendToSheet(data: RegistrationData) {
   try {
     console.log('Initializing Google Sheets connection...')
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID!, serviceAccountAuth)
@@ -42,7 +55,7 @@ export async function appendToSheet(data: Record<string, any>) {
 
     // Then append the new row
     console.log('Appending new row with data:', data)
-    await sheet.addRow(data)
+    await sheet.addRow(data as Record<string, string>)
     console.log('Row appended successfully')
 
     return { success: true }

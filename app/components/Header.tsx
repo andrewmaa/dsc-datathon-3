@@ -1,13 +1,25 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import MobileMenu from './MobileMenu'
 import { motion } from 'framer-motion'
 
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  useEffect(() => {
+    // Check if auth token exists
+    const authToken = document.cookie.split('; ').find(row => row.startsWith('auth-token='))
+    setIsAuthenticated(!!authToken)
+  }, [])
+
+  const handleLogout = () => {
+    document.cookie = 'auth-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+    window.location.href = '/'
+  }
 
   return (
     <motion.div 
@@ -23,7 +35,12 @@ export default function Header() {
           damping: 20
         }}
       >
-        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+        <MobileMenu 
+          isOpen={mobileMenuOpen} 
+          onClose={() => setMobileMenuOpen(false)} 
+          onLogout={handleLogout}
+          isAuthenticated={isAuthenticated}
+        />
         <header className="h-[--mast-height] w-full">
           <div className="flex justify-between items-center h-full px-4 sm:px-10 md:px-12 py-3">
             <div className="flex items-center gap-8">
@@ -44,17 +61,8 @@ export default function Header() {
               </button>
               <Link href="/" className="flex items-center">
                 <span className="text-white text-2xl font-bold font-['Suisse_Intl'] lowercase flex items-center mr-3">dsc</span>
-                <span className="text-white text-2xl font-[200] flex items-center" style={{ marginTop: '-0.2em', marginRight: '-0.7em' }}>×</span>
-                <div className="flex items-center min-w-[140px]">
-                  <Image
-                    src="https://andrewma.b-cdn.net/images/dsc/corner.png"
-                    alt="CORNER"
-                    width={200}
-                    height={40}
-                    className="h-8 w-auto object-contain"
-                    style={{ minWidth: '140px', marginTop: '-0.25em' }}
-                  />
-                </div>
+                <span className="text-white text-2xl font-[200] flex items-center" style={{ marginTop: '-0.2em', marginRight: '0.5em' }}>×</span>
+                <span className="text-white text-2xl font-bold font-['Geist'] lowercase flex items-center mr-7">???</span>
               </Link>
             </div>
 
@@ -63,26 +71,8 @@ export default function Header() {
                 <ul className="flex justify-end gap-9 h-full text-sm text-white w-full">
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
-                      <Link 
-                        href="/#tracks-section"
-                        className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const targetId = 'tracks-section';
-                          const element = document.getElementById(targetId);
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }}
-                      >
+                      <Link href="/tracks" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
                         <span className="flex-shrink-0">Tracks</span>
-                      </Link>
-                    </div>
-                  </li>
-                  <li className="flex items-center h-full group">
-                    <div className="relative uppercase">
-                      <Link href="/register" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
-                        <span className="flex-shrink-0">Register</span>
                       </Link>
                     </div>
                   </li>
@@ -100,6 +90,25 @@ export default function Header() {
                       </Link>
                     </div>
                   </li>
+                  <li className="flex items-center h-full group">
+                    <div className="relative uppercase">
+                      <Link href="/register" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
+                        <span className="flex-shrink-0">Register</span>
+                      </Link>
+                    </div>
+                  </li>
+                  {isAuthenticated && (
+                    <li className="flex items-center h-full group">
+                      <div className="relative uppercase">
+                        <button
+                          onClick={handleLogout}
+                          className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link cursor-pointer"
+                        >
+                          <span className="flex-shrink-0">LOGOUT</span>
+                        </button>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </div>
             </nav>

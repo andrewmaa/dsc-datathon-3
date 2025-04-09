@@ -19,8 +19,16 @@ export function AnimatedSection({ children, delay = 0, className = '' }: Animate
       variants={fadeUpVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: delay }}
+      viewport={{ 
+        once: true,
+        margin: "-100px",
+        amount: 0.2
+      }}
+      transition={{ 
+        duration: 0.4,
+        delay: delay,
+        ease: "easeOut"
+      }}
       className={className}
     >
       {children}

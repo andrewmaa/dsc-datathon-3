@@ -89,7 +89,7 @@ export default function RegisterPage() {
           {submitSuccess ? (
             <AnimatedSection>
               <div className="bg-[#0acdf0]/10 border border-[#0acdf0] p-6 rounded-lg">
-                <h3 className="text-2xl font-['Editorial_Old'] mb-4">Registration Successful!</h3>
+                <h3 className="text-2xl italic font-['Editorial_Old'] [font-feature-settings:'dlig'_1] mb-4">Registration Successful!</h3>
                 <p className="font-['Suisse_Intl']">Thank you for registering. We&apos;ll be in touch with more details soon.</p>
               </div>
             </AnimatedSection>
@@ -98,7 +98,7 @@ export default function RegisterPage() {
               <div className="space-y-8">
                 {/* Personal Information */}
                 <div className="space-y-6">
-                  <h3 className="font-['Editorial_Old'] text-2xl">Personal Information</h3>
+                  <h3 className="font-['Editorial_Old'] text-2xl [font-feature-settings:'dlig'_1]">Personal Information</h3>
                   
                   <div>
                     <label htmlFor="name" className="block font-['Suisse_Intl'] text-sm mb-2">Full Name *</label>
@@ -170,7 +170,7 @@ export default function RegisterPage() {
 
                 {/* Team Information */}
                 <div className="space-y-6">
-                  <h3 className="font-['Editorial_Old'] text-2xl">Team Information</h3>
+                  <h3 className="font-['Editorial_Old'] text-2xl [font-feature-settings:'dlig'_1]">Team Information</h3>
                   
                   <div>
                     <label htmlFor="teamName" className="block font-['Suisse_Intl'] text-sm mb-2">Team Name (Optional)</label>
@@ -185,7 +185,7 @@ export default function RegisterPage() {
 
                 {/* Additional Information */}
                 <div className="space-y-6">
-                  <h3 className="font-['Editorial_Old'] text-2xl">Additional Information</h3>
+                  <h3 className="font-['Editorial_Old'] text-2xl [font-feature-settings:'dlig'_1]">Additional Information</h3>
                   
                   <div>
                     <label htmlFor="dietaryRestrictions" className="block font-['Suisse_Intl'] text-sm mb-2">Dietary Restrictions</label>

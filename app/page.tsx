@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import Header from "./components/Header"
-import CountdownTimer from "./components/CountdownTimer"
+
 import Footer from "./components/Footer"
 import SplineScene from "./components/SplineScene"
 import { useState, useEffect } from "react"
@@ -81,10 +81,10 @@ export default function Home() {
       <section className="relative z-8" style={{ backgroundColor: '#408cc2' }}>
         <div className="h-full flex flex-col lg:flex-row">
           <div className="basis-4/7 h-full group">
-            <div className="inline-flex w-full h-full relative p-8 sm:p-10 rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
+            <div className="inline-flex w-full h-full relative p-6 sm:p-8 rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
               <div className="block relative z-8 w-full h-full rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] overflow-hidden bg-white/10 backdrop-blur-sm">
-                <div className="flex flex-col justify-center items-center h-full p-8 text-white">
-                  <div className="text-center mb-8">
+                <div className="flex flex-col justify-center items-center h-full p-6 text-white">
+                  <div className="text-center mb-6">
                     <AnimatedSection delay={0.2}>
                       <h3 className="font-['Editorial_Old'] text-3xl md:text-4xl lg:text-5xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
                         DSC@NYU <br /> Datathon
@@ -98,18 +98,12 @@ export default function Home() {
                       </div>
                     </AnimatedSection>
                   </div>
-                  
-                  <AnimatedSection delay={0.6}>
-                    <div className="text-center">
-                      <CountdownTimer />
-                    </div>
-                  </AnimatedSection>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex-1 flex justify-center items-center h-full pt-3 pb-14 md:pb-20 lg:py-14">
+          <div className="flex-1 flex justify-center items-center h-full pt-2 pb-10 md:pb-16 lg:py-10">
             <div className="px-4 sm:px-6">
               <AnimatedSection delay={0.2}>
                 <div className="lg:max-w-sm flex flex-col md:grid lg:flex lg:flex-col grid-cols-2 lg:ml-auto">
@@ -152,9 +146,9 @@ export default function Home() {
         <div className="h-full flex flex-col lg:flex-row">
           <div className="basis-3/5 h-full group lg:order-last">
             <div className="inline-flex w-full h-full relative p-4 sm:p-6 rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
-              <div className="block relative z-10 w-full h-full rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] p-8 flex items-center justify-center">
+              <div className="block relative z-10 w-full h-full rounded-[40px] sm:rounded-[48px] lg:rounded-[100px] p-6 sm:p-8 flex items-center justify-center">
                 <AnimatedSection delay={0.4}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[ // Sample Tracks Data
                       {
                         title: "Track 1: Predictive Insights",
@@ -291,8 +285,8 @@ export default function Home() {
                 {([
                   {
                     question: "How do I register for the event?",
-                    answer: `<p>Registration is now open! To secure your spot, please visit our <a href="https://www.eventbrite.com/e/data-science-datathon-tickets-1000000000000000000" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">Eventbrite page</a> and follow the instructions to complete your registration. No experience is required, and we welcome students from all backgrounds and disciplines.</p>`
-                  },
+                      answer: `<p>Fill out the form <a href="/register" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>. All participants must be enrolled in a degree program at NYU and adhere to the <a href="/code-of-conduct" class="underline underline-offset-2 decoration-1 hover:decoration-2">code of conduct</a>.</p>`
+                    },
                   {
                     question: "What is the event schedule?",
                     answer: `<p>The event will be held on April 25-26, 2024. The schedule will be posted on the event website closer to the event date.</p>`

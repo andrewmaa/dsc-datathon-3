@@ -6,13 +6,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onLogout: () => void;
+  isAuthenticated: boolean;
 }
 
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, onLogout, isAuthenticated }: MobileMenuProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ height: 0 }}
           animate={{ height: "auto" }}
           exit={{ height: 0 }}
@@ -24,21 +26,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           className="block overflow-hidden"
         >
           <nav className="w-full block text-white text-center uppercase text-sm">
-            <ul 
-              className="grid grid-cols-1 gap-5 pb-4"
-            >
+            <ul className="grid grid-cols-1 gap-5 pb-4">
               <li>
-                <Link 
-                  href="/about" 
-                  className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
-                  onClick={onClose}
-                >
-                  <span>About</span>
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/#tracks-section" 
+                <Link
+                  href="/tracks"
                   className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
                   onClick={(e) => {
                     e.preventDefault();
@@ -53,18 +44,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <span>Tracks</span>
                 </Link>
               </li>
+              
               <li>
-                <Link 
-                  href="/register" 
-                  className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
-                  onClick={onClose}
-                >
-                  <span>Register</span>
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/schedule" 
+                <Link
+                  href="/schedule"
                   className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
                   onClick={onClose}
                 >
@@ -72,14 +55,36 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/support" 
+                <Link
+                  href="/support"
                   className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
                   onClick={onClose}
                 >
                   <span>Support</span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/register"
+                  className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
+                  onClick={onClose}
+                >
+                  <span>Register</span>
+                </Link>
+              </li>
+              {isAuthenticated && (
+                <li>
+                  <button
+                    onClick={() => {
+                      onLogout();
+                      onClose();
+                    }}
+                    className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1 w-full cursor-pointer"
+                  >
+                    <span>LOGOUT</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </nav>
         </motion.div>
