@@ -1,20 +1,34 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import MobileMenu from './MobileMenu'
+import { motion } from 'framer-motion'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
-      <div className="bg-[#353535]/50 backdrop-blur-[80px] rounded-b-3xl w-max mx-auto">
+    <motion.div 
+      className="fixed top-0 left-0 right-0 z-50"
+    >
+      <motion.div 
+        className="bg-[#353535]/50 backdrop-blur-[80px] rounded-b-3xl w-max mx-auto overflow-hidden"
+        initial={{ paddingTop: 0 }}
+        animate={{ paddingTop: mobileMenuOpen ? 32 : 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20
+        }}
+      >
+        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
         <header className="h-[--mast-height] w-full">
-          <div className="flex justify-between items-center h-full px-6 sm:px-10 md:px-12 py-3">
+          <div className="flex justify-between items-center h-full px-4 sm:px-10 md:px-12 py-3">
             <div className="flex items-center gap-8">
               <button 
-                className="block lg:hidden relative flex items-center text-white size-6" 
+                className="block lg:hidden relative flex items-center text-white size-6 z-[60]"
                 title="Menu"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
@@ -28,29 +42,61 @@ export default function Header() {
                   </svg>
                 )}
               </button>
+              <Link href="/" className="flex items-center">
+                <span className="text-white text-2xl font-bold font-['Suisse_Intl'] lowercase flex items-center mr-3">dsc</span>
+                <span className="text-white text-2xl font-[200] flex items-center" style={{ marginTop: '-0.2em', marginRight: '-0.7em' }}>×</span>
+                <div className="flex items-center min-w-[140px]">
+                  <Image
+                    src="https://andrewma.b-cdn.net/images/dsc/corner.png"
+                    alt="CORNER"
+                    width={200}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                    style={{ minWidth: '140px', marginTop: '-0.25em' }}
+                  />
+                </div>
+              </Link>
             </div>
 
             <nav className="flex items-center w-full">
               <div className="hidden items-center w-full h-full lg:flex">
-                <ul className="flex justify-between gap-9 h-full text-sm text-white w-full">
+                <ul className="flex justify-end gap-9 h-full text-sm text-white w-full">
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
-                      <Link href="/about" className="hover:underline underline-offset-3 transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
-                        <span className="flex-shrink-0">About</span>
+                      <Link 
+                        href="/#tracks-section"
+                        className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const targetId = 'tracks-section';
+                          const element = document.getElementById(targetId);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      >
+                        <span className="flex-shrink-0">Tracks</span>
                       </Link>
                     </div>
                   </li>
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
-                      <Link href="/register" className="hover:underline underline-offset-3 transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
+                      <Link href="/register" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
                         <span className="flex-shrink-0">Register</span>
                       </Link>
                     </div>
                   </li>
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
-                      <Link href="/schedule" className="hover:underline underline-offset-3 transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
+                      <Link href="/schedule" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
                         <span className="flex-shrink-0">Schedule</span>
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="flex items-center h-full group">
+                    <div className="relative uppercase">
+                      <Link href="/support" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-2 px-1.5 rounded-sm parent-link">
+                        <span className="flex-shrink-0">Support</span>
                       </Link>
                     </div>
                   </li>
@@ -59,8 +105,7 @@ export default function Header() {
             </nav>
           </div>
         </header>
-        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 } 

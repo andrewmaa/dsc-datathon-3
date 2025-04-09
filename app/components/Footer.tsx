@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Footer() {
@@ -18,7 +19,7 @@ export default function Footer() {
       // Add your newsletter signup logic here
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated API call
       setSuccess(true)
-    } catch (err) {
+    } catch {
       setError(true)
     } finally {
       setLoading(false)
@@ -30,10 +31,18 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-start gap-x-10 gap-y-28 px-4 sm:px-6 lg:px-10">
         <section className="flex flex-col justify-between gap-10 md:h-[320px] order-last md:order-first">
           <div className="max-w-[500px] w-full grid grid-cols-1 gap-10">
-            <div className="flex items-center gap-2">
-              <span className="text-white text-3xl font-bold font-['Suisse_Intl']">dsc</span>
-              <span className="text-white">×</span>
-              <span className="text-white text-3xl font-bold font-['Suisse_Intl']">corner</span>
+            <div className="flex items-center gap-4">
+              <span className="text-white text-4xl font-bold font-['Suisse_Intl'] lowercase flex items-center">dsc</span>
+              <span className="text-white text-6xl font-[200] flex items-center" style={{ marginTop: '-0.2em' }}>×</span>
+              <div className="flex items-center">
+                <Image
+                  src="https://andrewma.b-cdn.net/images/dsc/corner.png"
+                  alt="CORNER"
+                  width={240}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </div>
             </div>
           </div>
           <p className="text-xs/none text-left font-mono uppercase text-white-40">
@@ -76,7 +85,7 @@ export default function Footer() {
                 </form>
               ) : (
                 <div className="font-mono text-xs/none uppercase h-[56px] flex items-center justify-center text-black bg-neon-green-light rounded-[64px]">
-                  You'll hear from us soon
+                  You&apos;ll hear from us soon
                 </div>
               )}
 

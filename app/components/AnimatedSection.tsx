@@ -20,7 +20,7 @@ export function AnimatedSection({ children, delay = 0, className = '' }: Animate
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: delay }}
+      transition={{ duration: 0.4, delay: delay }}
       className={className}
     >
       {children}
