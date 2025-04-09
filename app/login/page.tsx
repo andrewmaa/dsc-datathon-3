@@ -50,10 +50,16 @@ function LoginForm() {
             <div className="max-w-md lg:max-w-lg md:basis-1/2">
               <AnimatedSection>
                 <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight tracking-[-0.04em] [font-feature-settings:'dlig'_1]">
-                  Login
+                  <span className="flex items-center gap-4">
+                    Login
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M12 2.25C9.37665 2.25 7.25 4.37665 7.25 7V9.5H7C5.61929 9.5 4.5 10.6193 4.5 12V19C4.5 20.3807 5.61929 21.5 7 21.5H17C18.3807 21.5 19.5 20.3807 19.5 19V12C19.5 10.6193 18.3807 9.5 17 9.5H16.75V7C16.75 4.37665 14.6234 2.25 12 2.25ZM15.25 9.5V7C15.25 5.20507 13.7949 3.75 12 3.75C10.2051 3.75 8.75 5.20507 8.75 7V9.5H15.25ZM12 13.75C12.4142 13.75 12.75 14.0858 12.75 14.5V16.5C12.75 16.9142 12.4142 17.25 12 17.25C11.5858 17.25 11.25 16.9142 11.25 16.5V14.5C11.25 14.0858 11.5858 13.75 12 13.75Z" fill="currentColor"/>
+                    </svg>
+
+                  </span>
                 </h2>
                 <p className="font-['SuisseIntl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
-                  We&apos;ll be releasing more details about the event soon. In the meantime, you can <a href="/register" className="underline underline-offset-2 decoration-1 hover:decoration-2">register for the event</a> and follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
+                  Sorry, you don&apos;t have access to this page yet. We&apos;ll be releasing more details about the event soon. In the meantime, you can <a href="/register" className="underline underline-offset-2 decoration-1 hover:decoration-2">register for the event</a> and follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
                 </p>
                 <div className="mt-8">
                   <CountdownTimer />

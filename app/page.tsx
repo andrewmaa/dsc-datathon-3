@@ -124,8 +124,8 @@ export default function Home() {
                         <div className="absolute top-0 left-0 w-full h-full rounded-[64px] group-hover/cta:blur-[2px] group-hover/cta:scale-105 transition-all duration-500 bg-white hover:bg-black-20 disabled:bg-black-30 disabled:border-black-30" />
                         <div className="inline-flex gap-2 items-center justify-center h-10 px-4 relative min-w-[120px] text-black disabled:text-black-50">
                           <span className="m-center-text !leading-none">Learn More</span>
-                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 transition-transform duration-500 group-hover/cta:translate-x-1">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M8.30724 2.86177C8.56759 2.60142 8.9897 2.60142 9.25005 2.86177L13.9167 7.52843C14.1771 7.78878 14.1771 8.21089 13.9167 8.47124L9.25005 13.1379C8.9897 13.3983 8.56759 13.3983 8.30724 13.1379C8.04689 12.8776 8.04689 12.4554 8.30724 12.1951L11.8358 8.6665H4.11198C3.74379 8.6665 3.44531 8.36803 3.44531 7.99984C3.44531 7.63165 3.74379 7.33317 4.11198 7.33317H11.8358L8.30724 3.80458C8.04689 3.54423 8.04689 3.12212 8.30724 2.86177Z" fill="currentColor"/>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4">
+                            <path d="M12.6667 7.33333H12V5.33333C12 2.9401 10.0599 1 7.66667 1C5.27343 1 3.33333 2.9401 3.33333 5.33333V7.33333H2.66667C2.29848 7.33333 2 7.63181 2 8V13.3333C2 13.7015 2.29848 14 2.66667 14H12.6667C13.0349 14 13.3333 13.7015 13.3333 13.3333V8C13.3333 7.63181 13.0349 7.33333 12.6667 7.33333ZM4.66667 5.33333C4.66667 3.49238 6.15871 2 8 2C9.84129 2 11.3333 3.49238 11.3333 5.33333V7.33333H4.66667V5.33333Z" fill="currentColor"/>
                           </svg>
                         </div>
                       </button>
@@ -168,8 +168,9 @@ export default function Home() {
                         <div className="absolute top-0 left-0 w-full h-full rounded-[64px] group-hover/cta:blur-[2px] group-hover/cta:scale-105 transition-all duration-500 bg-black hover:bg-black/80 disabled:bg-black/20 disabled:border-black/20" />
                         <div className="inline-flex gap-2 items-center justify-center h-10 px-4 relative min-w-[120px] text-white disabled:text-black-40">
                           <span className="m-center-text !leading-none">Learn More</span>
-                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 transition-transform duration-500 group-hover/cta:translate-x-1">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M8.30724 2.86177C8.56759 2.60142 8.9897 2.60142 9.25005 2.86177L13.9167 7.52843C14.1771 7.78878 14.1771 8.21089 13.9167 8.47124L9.25005 13.1379C8.9897 13.3983 8.56759 13.3983 8.30724 13.1379C8.04689 12.8776 8.04689 12.4554 8.30724 12.1951L11.8358 8.6665H4.11198C3.74379 8.6665 3.44531 8.36803 3.44531 7.99984C3.44531 7.63165 3.74379 7.33317 4.11198 7.33317H11.8358L8.30724 3.80458C8.04689 3.54423 8.04689 3.12212 8.30724 2.86177Z" fill="currentColor"/>
+
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4">
+                            <path d="M12.6667 7.33333H12V5.33333C12 2.9401 10.0599 1 7.66667 1C5.27343 1 3.33333 2.9401 3.33333 5.33333V7.33333H2.66667C2.29848 7.33333 2 7.63181 2 8V13.3333C2 13.7015 2.29848 14 2.66667 14H12.6667C13.0349 14 13.3333 13.7015 13.3333 13.3333V8C13.3333 7.63181 13.0349 7.33333 12.6667 7.33333ZM4.66667 5.33333C4.66667 3.49238 6.15871 2 8 2C9.84129 2 11.3333 3.49238 11.3333 5.33333V7.33333H4.66667V5.33333Z" fill="currentColor"/>
                           </svg>
                         </div>
                       </button>

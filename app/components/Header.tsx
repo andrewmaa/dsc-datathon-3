@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import MobileMenu from './MobileMenu'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     // Check if auth token exists
@@ -19,6 +21,13 @@ export default function Header() {
   const handleLogout = () => {
     document.cookie = 'auth-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
     window.location.href = '/'
+  }
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   return (
@@ -59,7 +68,7 @@ export default function Header() {
                   </svg>
                 )}
               </button>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center" onClick={handleLogoClick}>
                 <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-3">dsc</span>
                 <span className="text-white text-3xl font-[300] flex items-center" style={{ marginTop: '-0.2em', marginRight: '0.5em' }}>×</span>
                 <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-7" style={{ marginTop: '-0.1em'}}>???</span>
