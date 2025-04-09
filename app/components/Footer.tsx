@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-xs/none text-left font-mono uppercase text-white-40">
-            © 2025 Data Science Club @ NYU.
+            © 2025 Data Science Club @ NYU. Made with ❤️ by <a href="https://www.andrewma.io" target="_blank" className="hover:underline underline-offset-2">Andrew Ma</a>.
           </p>
         </section>
 
@@ -40,37 +40,32 @@ export default function Footer() {
           <div>
             <nav className="grid grid-cols-2 gap-5 text-black-40 text-xs/none font-mono uppercase">
               <ul className="space-y-6 md:space-y-3">
-                <li>
-                  <Link href="/policies/refund-policy" className="hover:underline underline-offset-2">
-                    <span>Returns Policy</span>
+              <li>
+                  <Link href="/coc" className="hover:underline underline-offset-2">
+                    <span>Code of Conduct</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/policies/privacy-policy" className="hover:underline underline-offset-2">
-                    <span>Privacy Policy</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/policies/terms-of-service" className="hover:underline underline-offset-2">
-                    <span>Terms of Service</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pages/warranty" className="hover:underline underline-offset-2">
-                    <span>Warranty</span>
+                  <Link href="/schedule" className="hover:underline underline-offset-2">
+                    <span>Schedule</span>
                   </Link>
                 </li>
               </ul>
 
               <ul className="space-y-6 md:space-y-3">
                 <li>
-                  <a href="https://www.instagram.com/telepathic.instruments/" target="_blank" className="hover:underline underline-offset-2">
+                  <a href="https://www.instagram.com/dscnyu/" target="_blank" className="hover:underline underline-offset-2">
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/@telepathic.instruments" target="_blank" className="hover:underline underline-offset-2">
-                    Youtube
+                  <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="hover:underline underline-offset-2">
+                    Discord
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/data-science-club-nyu/" target="_blank" className="hover:underline underline-offset-2">
+                    LinkedIn
                   </a>
                 </li>
               </ul>

@@ -45,7 +45,7 @@ export default function Header() {
           <div className="flex justify-between items-center h-full px-4 sm:px-10 md:px-12 py-3">
             <div className="flex items-center gap-8">
               <button 
-                className="block lg:hidden relative flex items-center text-white size-6 z-[60]"
+                className="block lg:hidden relative flex items-center text-white size-6 z-[60] cursor-pointer"
                 title="Menu"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >

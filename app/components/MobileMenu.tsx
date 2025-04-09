@@ -20,8 +20,9 @@ export default function MobileMenu({ isOpen, onClose, onLogout, isAuthenticated 
           exit={{ height: 0 }}
           transition={{ 
             type: "spring",
-            stiffness: 150, 
-            damping: 25
+            stiffness: 100, 
+            damping: 20,
+            mass: 0.5
           }}
           className="block overflow-hidden"
         >
