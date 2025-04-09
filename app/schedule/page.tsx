@@ -21,7 +21,7 @@ interface DaySchedule {
 const schedule: DaySchedule[] = [
   {
     day: 'Day 1',
-    date: 'April 25, 2024',
+    date: 'April 25, 2025',
     events: [
       {
         time: '9:00 AM',
@@ -93,7 +93,7 @@ const schedule: DaySchedule[] = [
   },
   {
     day: 'Day 2',
-    date: 'April 26, 2024',
+    date: 'April 26, 2025',
     events: [
       {
         time: '2:00 AM',

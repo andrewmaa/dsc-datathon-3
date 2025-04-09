@@ -53,7 +53,7 @@ function LoginForm() {
                   Login
                 </h2>
                 <p className="font-['Suisse_Intl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
-                  We&apos;ll be releasing more details about the event soon. In the meantime, you can follow us on <a href="https://www.instagram.com/dscnyu/" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
+                  We&apos;ll be releasing more details about the event soon. In the meantime, you can follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
                 </p>
                 <div className="mt-8">
                   <CountdownTimer />
@@ -92,7 +92,7 @@ function LoginForm() {
                       type="submit"
                       className="group relative w-full overflow-hidden rounded-full bg-white text-black px-6 py-3 transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/20"
                     >
-                      <div className="relative z-10 flex items-center justify-center gap-2">
+                      <div className="relative z-10 flex items-center justify-center gap-2 cursor-pointer">
                         <span>Login</span>
                         <svg
                           className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

@@ -289,7 +289,7 @@ export default function Home() {
                     },
                   {
                     question: "What is the event schedule?",
-                    answer: `<p>The event will be held on April 25-26, 2024. The schedule will be posted on the event website closer to the event date.</p>`
+                    answer: `<p>The event will be held on April 25-26, 2025. The schedule will be posted on the event website closer to the event date.</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>

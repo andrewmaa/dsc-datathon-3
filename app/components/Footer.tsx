@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-xs/none text-left font-mono uppercase text-white-40">
-            © 2024 Data Science Club @ NYU.
+            © 2025 Data Science Club @ NYU.
           </p>
         </section>
 
