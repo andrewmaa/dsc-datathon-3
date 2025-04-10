@@ -18,10 +18,12 @@ type FormData = {
   experienceLevelDeepL: number
   skills: string[]
   skillsToGain: string
-  hasTeammates: string
   netid1: string
+  name1: string
   netid2: string
+  name2: string
   netid3: string
+  name3: string
   confirmation: string
 }
 
@@ -136,8 +138,8 @@ export default function RegisterPage() {
                       {...register('email', { 
                         required: 'Email is required',
                         pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: 'Invalid email address'
+                          value: /^[A-Z0-9._%+-]+@nyu\.edu$/i,
+                          message: 'Please use your NYU email address (@nyu.edu)'
                         }
                       })}
                       className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
@@ -324,58 +326,74 @@ export default function RegisterPage() {
                     {errors.skillsToGain && <p className="text-red-400 text-sm mt-1">{errors.skillsToGain.message}</p>}
                   </div>
                   <div className="mb-6">
-                    <label className="block font-['SuisseIntl'] text-sm mb-2">Do you have teammates in mind? *</label>
-                    <label className="block font-['SuisseIntl'] text-white/70 text-xs mb-5">Each person needs to be in a team of at least 3. Don&apos;t worry if you don&apos;t, we will have a social/mixer event on April 17 from 5-6pm in Leslie e-lab to meet other people looking for teammates!</label>
-                    <div className="flex items-center justify-between gap-2">
-                      {['Yes', 'No'].map((option) => (
-                        <label key={option} className="flex-1">
-                          <input
-                            type="radio"
-                            value={option.toLowerCase()}
-                            {...register('hasTeammates', { required: 'Please select an option' })}
-                            className="sr-only peer"
-                          />
-                          <div className="flex items-center justify-center h-10 w-full rounded-lg border border-white/20 peer-checked:border-[#0acdf0] peer-checked:bg-[#0acdf0]/10 cursor-pointer transition-colors">
-                            <span className="font-['SuisseIntl'] text-sm text-white/90 peer-checked:text-white">{option}</span>
-                          </div>
-                        </label>
-                      ))}
-                    </div>
-                    {errors.hasTeammates && <p className="text-red-400 text-sm mt-1">{errors.hasTeammates.message}</p>}
-                  </div>
-
-                  {watch('hasTeammates') === 'yes' && (
+                    <label className="block font-['SuisseIntl'] text-sm mb-2">Teammate Information</label>
+                    <label className="block font-['SuisseIntl'] text-white/70 text-xs mb-5">Each person needs to be in a team of at least 3. We will have a social/mixer event on April 17 from 5-6pm in Leslie e-lab to meet other people looking for teammates!</label>
+                    
                     <div className="mt-3 space-y-4">
-                      <div>
-                        <label htmlFor="netid1" className="block font-['SuisseIntl'] text-sm mb-2">NetID 1 *</label>
-                        <input
-                          id="netid1"
-                          type="text"
-                          {...register('netid1', { required: 'NetID 1 is required' })}
-                          className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
-                        />
-                        {errors.netid1 && <p className="text-red-400 text-sm mt-1">{errors.netid1.message}</p>}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="netid1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 1 NetID *</label>
+                          <input
+                            id="netid1"
+                            type="text"
+                            {...register('netid1', { required: 'Teammate 1 NetID is required' })}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                          {errors.netid1 && <p className="text-red-400 text-sm mt-1">{errors.netid1.message}</p>}
+                        </div>
+                        <div>
+                          <label htmlFor="name1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 1 Full Name *</label>
+                          <input
+                            id="name1"
+                            type="text"
+                            {...register('name1', { required: 'Teammate 1 Full Name is required' })}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                          {errors.name1 && <p className="text-red-400 text-sm mt-1">{errors.name1.message}</p>}
+                        </div>
                       </div>
-                      <div>
-                        <label htmlFor="netid2" className="block font-['SuisseIntl'] text-sm mb-2">NetID 2</label>
-                        <input
-                          id="netid2"
-                          type="text"
-                          {...register('netid2')}
-                          className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
-                        />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="netid2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 NetID *</label>
+                          <input
+                            id="netid2"
+                            type="text"
+                            {...register('netid2', { required: 'Teammate 2 NetID is required' })}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="name2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 Full Name *</label>
+                          <input
+                            id="name2"
+                            type="text"
+                            {...register('name2', { required: 'Teammate 2 Full Name is required' })}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label htmlFor="netid3" className="block font-['SuisseIntl'] text-sm mb-2">NetID 3</label>
-                        <input
-                          id="netid3"
-                          type="text"
-                          {...register('netid3')}
-                          className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
-                        />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="netid3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 NetID</label>
+                          <input
+                            id="netid3"
+                            type="text"
+                            {...register('netid3')}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="name3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 Full Name</label>
+                          <input
+                            id="name3"
+                            type="text"
+                            {...register('name3')}
+                            className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
+                          />
+                        </div>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
                 </div>
                   

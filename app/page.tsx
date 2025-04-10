@@ -82,7 +82,7 @@ export default function Home() {
           <div className="basis-4/7 h-full group">
             <div className="inline-flex w-full h-full relative p-4 sm:p-6 md:p-8 rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
               <div className="block relative z-8 w-full h-full rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] overflow-hidden bg-white/10 backdrop-blur-sm">
-                <div className="flex flex-col justify-center items-center h-full p-4 sm:p-6 text-white">
+                <div className="flex flex-col justify-center items-center h-full p-4 sm:p-6 text-white mb-4 sm:mb-6">
                   <div className="text-center mb-4 sm:mb-6">
                     <AnimatedSection delay={0.2}>
                       <h3 className="font-['SuisseIntl'] font-book text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-1 sm:mb-2 md:mb-3">
@@ -108,7 +108,7 @@ export default function Home() {
             <div className="px-4 sm:px-6">
               <AnimatedSection delay={0.2}>
                 <div className="lg:max-w-sm flex flex-col md:grid lg:flex lg:flex-col grid-cols-2 lg:ml-auto">
-                  <h2 className="font-['Editorial_Old'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 sm:mb-6 md:mb-8">
+                  <h2 className="font-['Editorial_Old'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight text-white tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-4 sm:mb-6 md:mb-8 mt-8">
                     Transform data into <span className="italic">insights</span>.
                   </h2>
                   <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10">
@@ -123,7 +123,7 @@ export default function Home() {
                       >
                         <div className="absolute top-0 left-0 w-full h-full rounded-[64px] group-hover/cta:blur-[2px] group-hover/cta:scale-105 transition-all duration-500 bg-white hover:bg-black-20 disabled:bg-black-30 disabled:border-black-30" />
                         <div className="inline-flex gap-2 items-center justify-center h-10 px-4 relative min-w-[120px] text-black disabled:text-black-50">
-                          <span className="m-center-text !leading-none">Learn More</span>
+                          <span className="m-center-text !leading-none">View the Schedule</span>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4">
                             <path d="M12.6667 7.33333H12V5.33333C12 2.9401 10.0599 1 7.66667 1C5.27343 1 3.33333 2.9401 3.33333 5.33333V7.33333H2.66667C2.29848 7.33333 2 7.63181 2 8V13.3333C2 13.7015 2.29848 14 2.66667 14H12.6667C13.0349 14 13.3333 13.7015 13.3333 13.3333V8C13.3333 7.63181 13.0349 7.33333 12.6667 7.33333ZM4.66667 5.33333C4.66667 3.49238 6.15871 2 8 2C9.84129 2 11.3333 3.49238 11.3333 5.33333V7.33333H4.66667V5.33333Z" fill="currentColor"/>
                           </svg>
@@ -314,15 +314,35 @@ export default function Home() {
               </AnimatedSection>
             </div>
             <AnimatedSection delay={0.4}>
-              <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
+            <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
                 {([
                   {
-                    question: "How do I register for the event?",
-                    answer: `<p>Fill out the form <a href="/register" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>. All participants must be enrolled in a degree program at NYU and adhere to the <a href="/code-of-conduct" class="underline underline-offset-2 decoration-1 hover:decoration-2">code of conduct</a>.</p>`
+                    question: "What is a Datathon?",
+                    answer: `<p>Similar to hackathons, a datathon is an event where participants gather to solve practical problems through the application of data science tools and techniques, by working together in teams to generate insights and potential solutions.</p>`
                   },
                   {
-                    question: "What is the event schedule?",
-                    answer: `<p>The event will be held on April 25-26, 2025. The schedule will be posted on the event website closer to the event date.</p>`
+                    question: "Who can participate?",
+                    answer: `<p>Absolutely anyone can participate regardless of skill level!</p>`
+                  },
+                  {
+                    question: "When is the event? Do I need to stay the entire time?",
+                    answer: `<p>The datathon will begin 5:00 PM April 25th and end 6:00 PM April 26th. You are NOT required to be coding for the entire duration - we HIGHLY recommend getting some rest before recording your presentations!</p>`
+                  },
+                  {
+                    question: "Where is the Datathon?",
+                    answer: `<p>The event will take place at NYU Silver Center for Arts and Sciences, Room 207. You'll have access to this space throughout the event.</p>`
+                  },
+                  {
+                    question: "Which challenge do I choose?",
+                    answer: `<p>There will be different challenge tracks you can choose from. We recommend selecting a track that aligns with your skills and interests. Detailed information about each track will be available at the start of the event.</p>`
+                  },
+                  {
+                    question: "I'm getting stuck... what do I do?", 
+                    answer: `<p>Check out our <a href="/support" class="underline underline-offset-2 decoration-1 hover:decoration-2">support</a> page for more resources. We'll have mentors and resources available throughout the event to help you with any difficulties you face while tackling the challenges. Don't hesitate to ask for help!</p>`
+                  },
+                  {
+                    question: "How do I register for the event?",
+                    answer: `<p>Fill out the form <a href="/register" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>. All participants must be enrolled in a undergraduate degree program at NYU and adhere to the <a href="/code-of-conduct" class="underline underline-offset-2 decoration-1 hover:decoration-2">code of conduct</a>.</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>

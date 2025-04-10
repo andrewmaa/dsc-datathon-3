@@ -11,7 +11,7 @@ export default function SupportPage() {
     <main className="min-h-screen relative">
       <Header />
       
-      {/* Support Section - translated from HTML */}
+      {/* support Section - translated from HTML */}
       <section 
         className="relative z-10 py-24 md:py-28 lg:py-40" // Increased vertical padding
         style={{ backgroundColor: '#191919', color: '#ffffff' }}
@@ -81,12 +81,32 @@ export default function SupportPage() {
               <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
                 {([
                   {
-                    question: "How do I register for the event?",
-                    answer: `<p>Registration is now open! To secure your spot, please visit our <a href="https://www.eventbrite.com/e/data-science-datathon-tickets-1000000000000000000" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">Eventbrite page</a> and follow the instructions to complete your registration. No experience is required, and we welcome students from all backgrounds and disciplines.</p>`
+                    question: "What is a Datathon?",
+                    answer: `<p>Similar to hackathons, a datathon is an event where participants gather to solve practical problems through the application of data science tools and techniques, by working together in teams to generate insights and potential solutions.</p>`
                   },
                   {
-                    question: "What is the event schedule?",
-                    answer: `<p>The event will be held on April 25-26, 2025. The schedule will be posted on the event website closer to the event date.</p>`
+                    question: "Who can participate?",
+                    answer: `<p>Absolutely anyone can participate regardless of skill level!</p>`
+                  },
+                  {
+                    question: "When is the event? Do I need to stay the entire time?",
+                    answer: `<p>The datathon will begin 5:00 PM April 25th and end 6:00 PM April 26th. You are NOT required to be coding for the entire duration - we HIGHLY recommend getting some rest before recording your presentations!</p>`
+                  },
+                  {
+                    question: "Where is the Datathon?",
+                    answer: `<p>The event will take place at NYU Silver Center for Arts and Sciences, Room 207. You'll have access to this space throughout the event.</p>`
+                  },
+                  {
+                    question: "Which challenge do I choose?",
+                    answer: `<p>There will be different challenge tracks you can choose from. We recommend selecting a track that aligns with your skills and interests. Detailed information about each track will be available at the start of the event.</p>`
+                  },
+                  {
+                    question: "I'm getting stuck... what do I do?", 
+                    answer: `<p>Check out the resources section below for more help. We'll also have mentors and support available throughout the event to help you with any difficulties you face while tackling the challenges. Don't hesitate to ask!</p>`
+                  },
+                  {
+                    question: "How do I register for the event?",
+                    answer: `<p>Fill out the form <a href="/register" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>. All participants must be enrolled in a undergraduate undergraduate undergraduate degree program at NYU and adhere to the <a href="/code-of-conduct" class="underline underline-offset-2 decoration-1 hover:decoration-2">code of conduct</a>.</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
@@ -110,7 +130,7 @@ export default function SupportPage() {
             <div className="max-w-md lg:max-w-lg">
               <AnimatedSection delay={0.2}>
                 <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
-                  Participation
+                  Resources
                 </h2>
               </AnimatedSection>
             </div>

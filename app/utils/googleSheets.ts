@@ -13,10 +13,12 @@ type RegistrationData = {
   experienceLevelDeepL: number
   skills: string
   skillsToGain: string
-  hasTeammates: string
   netid1: string
+  name1: string
   netid2: string
+  name2: string
   netid3: string
+  name3: string
   confirmation: string
   timestamp: string
 }
@@ -72,10 +74,12 @@ export async function appendToSheet(data: RegistrationData) {
       'experienceLevelDeepL',
       'skills',
       'skillsToGain',
-      'hasTeammates',
       'netid1',
+      'name1',
       'netid2',
+      'name2',
       'netid3',
+      'name3',
       'confirmation',
       'timestamp'
     ]

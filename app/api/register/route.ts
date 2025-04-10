@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     console.log('Request body:', body)
     
     // Validate required fields
-    const requiredFields = ['name', 'email', 'netid', 'year', 'major', 'experienceLevelPython', 'experienceLevelML', 'experienceLevelDeepL', 'skills', 'skillsToGain', 'hasTeammates', 'confirmation']
+    const requiredFields = ['name', 'email', 'netid', 'year', 'major', 'experienceLevelPython', 'experienceLevelML', 'experienceLevelDeepL', 'skills', 'skillsToGain', 'netid1', 'name1', 'netid2', 'name2', 'confirmation']
     const missingFields = requiredFields.filter(field => !body[field])
     
     if (missingFields.length > 0) {

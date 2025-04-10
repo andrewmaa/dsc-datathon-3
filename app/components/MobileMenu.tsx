@@ -61,7 +61,7 @@ export default function MobileMenu({ isOpen, onClose, onLogout, isAuthenticated 
                   className="font-mono text-sm hover:text-[#0acdf0] transition-colors relative flex items-center justify-center gap-1.5 px-1"
                   onClick={onClose}
                 >
-                  <span>Support</span>
+                  <span>support</span>
                 </Link>
               </li>
               <li>
