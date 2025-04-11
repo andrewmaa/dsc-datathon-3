@@ -99,8 +99,12 @@ export default function RegisterPage() {
               <AnimatedSection delay={0.2}>
                 <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
-                    Join us for an exciting hackathon experience. Fill out the form below to register.
-                  </p>
+                    Join us for an exciting datathon experience. Fill out the form below to register. <br /></p> 
+                    <div className="bg-blue-100 border border-blue-200 text-blue-700 px-4 py-3 rounded-xl relative mb-4 " role="alert">
+                  <strong className="font-semibold">Note:</strong>
+                  <br />
+                  <span className="block sm:inline">You must be enrolled in an NYU undergraduate program to participate.</span>
+                </div>
                 </div>
               </AnimatedSection>
             </div>

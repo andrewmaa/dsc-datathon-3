@@ -86,7 +86,7 @@ export default function SupportPage() {
                   },
                   {
                     question: "Who can participate?",
-                    answer: `<p>Absolutely anyone can participate regardless of skill level!</p>`
+                    answer: `<p>Absolutely anyone can participate regardless of skill level! You must be enrolled in an NYU undergraduate program to participate.</p>`
                   },
                   {
                     question: "When is the event? Do I need to stay the entire time?",

@@ -183,6 +183,11 @@ export default function Home() {
             {/* Track grid on the right */}
             <div className="w-full lg:w-1/2">
               <AnimatedSection delay={0.4}>
+              <div className="bg-white text-black px-4 py-3 rounded-xl relative mb-4 " role="alert">
+                  <strong className="font-bold">Note:</strong>
+                  <br />
+                  <span className="block sm:inline">Track information will be released soon.</span>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {[ // Sample Tracks Data
                     {
@@ -209,7 +214,7 @@ export default function Home() {
                       whileHover={{ backgroundColor: "#000000", color: "#FFFFFF" }} 
                       transition={{ duration: 0.08, ease: "easeOut" }} 
                     >
-                      <h3 className="font-semibold text-sm sm:text-lg mb-2">{track.title}</h3> 
+                      <h3 className="font-['SuisseIntl'] font-semibold text-sm sm:text-lg mb-2">{track.title}</h3> 
                       <p className="font-mono text-sm flex-grow">{track.description}</p> 
                     </motion.div>
                   ))}
@@ -322,7 +327,7 @@ export default function Home() {
                   },
                   {
                     question: "Who can participate?",
-                    answer: `<p>Absolutely anyone can participate regardless of skill level!</p>`
+                    answer: `<p>Absolutely anyone can participate regardless of skill level! You must be enrolled in an NYU undergraduate program to participate.</p>`
                   },
                   {
                     question: "When is the event? Do I need to stay the entire time?",

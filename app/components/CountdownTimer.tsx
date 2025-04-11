@@ -109,7 +109,7 @@ export default function CountdownTimer() {
         <br />
         <div className="font-['SuisseIntl'] text-sm/6 text-white/50 w-full text-center">Location: Silver Center for Arts and Sciences</div>
         <div className="font-['Geist'] text-sm text-white/50 w-full text-center">
-         April 25 9:00 AM - April 26 1:00 PM
+         April 25 5:00 PM - April 26 6:00 PM
         </div>
       </motion.div>
     </div>
