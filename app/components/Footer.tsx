@@ -1,19 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#191919] text-white py-10">
       <div className="flex flex-col md:flex-row justify-between items-start gap-x-10 gap-y-28 px-4 sm:px-6 lg:px-10">
         <section className="flex flex-col justify-between gap-10 md:h-[320px] order-last md:order-first">
-          <div className="max-w-[500px] w-full grid grid-cols-1 gap-10">
+          <div className="max-w-[500px] w-full grid grid-cols-1 gap-10 ">
             <Link href="/" className="flex items-center">
-              <div className="flex items-center gap-4">
-                <span className="text-white text-4xl font-book font-['SuisseIntl'] lowercase flex items-center">dsc</span>
-              <span className="text-white text-4xl font-[300] flex items-center" style={{ marginTop: '-0.2em' }}>×</span>
-                <span className="text-white text-4xl font-book font-['SuisseIntl'] lowercase flex items-center">???</span>
+              <div className="flex items-center gap-4 bg-white rounded-full px-4">
+                <Image src="https://andrewma.b-cdn.net/images/dsc/logo.png" alt="Logo" width={250} height={250} />
               </div>
             </Link>
           </div>
@@ -43,8 +41,8 @@ export default function Footer() {
             <nav className="grid grid-cols-2 gap-5 text-black-40 text-xs/none font-mono uppercase">
               <ul className="space-y-6 md:space-y-3">
               <li>
-                  <Link href="/coc" className="hover:underline underline-offset-2">
-                    <span>Code of Conduct</span>
+                  <Link href="/agreement" className="hover:underline underline-offset-2">
+                    <span>Data Usage Agreement</span>
                   </Link>
                 </li>
                 <li>

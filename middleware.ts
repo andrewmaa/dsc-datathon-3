@@ -5,8 +5,8 @@ export function middleware(request: NextRequest) {
   const authToken = request.cookies.get('auth-token')
   const { pathname } = request.nextUrl
 
-  // Allow access to registration and login pages
-  if (pathname === '/register' || pathname === '/login' || pathname === '/') {
+  // Allow access to registration, schedule, and login pages
+  if (pathname === '/register' || pathname === '/schedule' || pathname === '/login' || pathname === '/') {
     return NextResponse.next()
   }
 

@@ -24,70 +24,34 @@ const schedule: DaySchedule[] = [
     date: 'April 25, 2025',
     events: [
       {
-        time: '9:00 AM',
-        title: 'Registration & Breakfast',
-        description: 'Check-in and enjoy some breakfast while meeting other participants.',
-        location: 'Main Hall'
-      },
-      {
-        time: '10:00 AM',
-        title: 'Opening Ceremony',
-        description: 'Welcome remarks and introduction to the datathon.',
-        location: 'Main Hall'
-      },
-      {
-        time: '10:30 AM',
-        title: 'Team Formation',
-        description: 'Find your team or join an existing one.',
-        location: 'Main Hall'
-      },
-      {
-        time: '11:00 AM',
-        title: 'Hacking Begins',
-        description: 'Start working on your projects with your team.',
-        location: 'Various Rooms'
-      },
-      {
-        time: '12:30 PM',
-        title: 'Lunch',
-        description: 'Take a break and enjoy some food.',
-        location: 'Dining Area'
-      },
-      {
-        time: '2:00 PM',
-        title: 'Workshop: Data Analysis',
-        description: 'Learn about data analysis techniques and tools.',
-        location: 'Workshop Room A'
-      },
-      {
-        time: '3:30 PM',
-        title: 'Workshop: Machine Learning',
-        description: 'Introduction to machine learning concepts.',
-        location: 'Workshop Room B'
-      },
-      {
         time: '5:00 PM',
-        title: 'Mentor Sessions',
-        description: 'Get help and guidance from industry experts.',
-        location: 'Mentor Area'
+        title: 'Kick-Off Ceremony',
+        description: 'Welcome remarks, rules, theme announcement, and logistics overview.',
+        location: 'Silver 207'
+      },
+      {
+        time: '6:00 PM',
+        title: 'Datathon Officially Begins',
+        description: 'Participants move to Bobst classrooms (LL112, LL113, LL114, LL138).',
+        location: 'Bobst Classrooms'
       },
       {
         time: '7:00 PM',
-        title: 'Dinner',
-        description: 'Refuel with dinner and network with other participants.',
-        location: 'Dining Area'
+        title: 'Opening Dinner',
+        description: 'Catered by Surross Thai Bistro :)',
+        location: 'Bobst LL138'
       },
       {
-        time: '9:00 PM',
-        title: 'Late Night Snacks',
-        description: 'Keep your energy up with some snacks.',
-        location: 'Snack Area'
+        time: '8:00 PM',
+        title: 'Best Team Name & Logo Contest',
+        description: 'Spirit Challenge #1.',
+        location: 'Bobst Classrooms'
       },
       {
-        time: '12:00 AM',
-        title: 'Midnight Activity',
-        description: 'Fun activity to keep everyone energized.',
-        location: 'Main Hall'
+        time: '10:00 PM',
+        title: 'Funniest Hallucination',
+        description: 'Spirit Challenge #2.',
+        location: 'Bobst Classrooms'
       }
     ]
   },
@@ -96,40 +60,40 @@ const schedule: DaySchedule[] = [
     date: 'April 26, 2025',
     events: [
       {
-        time: '2:00 AM',
-        title: 'Quiet Hours Begin',
-        description: 'Time to focus on your projects.',
-        location: 'Various Rooms'
-      },
-      {
-        time: '8:00 AM',
-        title: 'Breakfast',
-        description: 'Start the second day with breakfast.',
-        location: 'Dining Area'
-      },
-      {
         time: '10:00 AM',
-        title: 'Project Submissions Due',
-        description: 'Finalize and submit your projects.',
-        location: 'Submission Portal'
+        title: 'Datathon Scavenger Hunt',
+        description: 'Spirit Challenge #3.',
+        location: 'Bobst Library'
       },
       {
-        time: '11:00 AM',
-        title: 'Judging',
-        description: 'Projects are evaluated by our panel of judges.',
-        location: 'Judging Rooms'
+        time: '12:00 PM',
+        title: 'Brunch',
+        description: 'Bagels, cream cheese, coffee & tea.',
+        location: 'Bobst LL138'
       },
       {
-        time: '1:00 PM',
-        title: 'Lunch',
-        description: 'Final meal together before the closing ceremony.',
-        location: 'Dining Area'
+        time: '12:00 PM',
+        title: 'Most Unique Corner List',
+        description: 'Spirit Challenge #4.',
+        location: 'Bobst Classrooms'
       },
       {
         time: '2:00 PM',
-        title: 'Closing Ceremony',
-        description: 'Announcement of winners and closing remarks.',
-        location: 'Main Hall'
+        title: 'Data Science Trivia',
+        description: 'Spirit Challenge #5.',
+        location: 'Bobst Classrooms'
+      },
+      {
+        time: '4:00 PM',
+        title: 'Datathon Meme Contest',
+        description: 'Spirit Challenge #6.',
+        location: 'Bobst Classrooms'
+      },
+      {
+        time: '6:00 PM',
+        title: 'Datathon Ends & Dinner',
+        description: 'Catered by Fumo Kips Bay (Pasta).',
+        location: 'Bobst LL138'
       }
     ]
   }
@@ -177,7 +141,7 @@ export default function SchedulePage() {
                 <button
                   key={index}
                   onClick={() => setActiveDay(index)}
-                  className={`px-6 py-3 rounded-full font-['SuisseIntl'] text-sm transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-full font-['SuisseIntl'] text-sm transition-all duration-300 cursor-pointer ${
                     activeDay === index
                       ? 'bg-white text-[#191919]'
                       : 'bg-transparent text-white border border-white/20 hover:border-white/40'
@@ -191,7 +155,7 @@ export default function SchedulePage() {
             {/* Schedule Content */}
             <div className="space-y-6">
               <AnimatedSection>
-                <div className="font-['Editorial_Old'] text-2xl mb-8 [font-feature-settings:'dlig'_1]">
+                <div className="font-['Editorial_Old'] italic text-2xl mb-8 [font-feature-settings:'dlig'_1]">
                   {schedule[activeDay].date}
                 </div>
               </AnimatedSection>
@@ -203,12 +167,12 @@ export default function SchedulePage() {
                     <div className="relative p-6">
                       <div className="flex gap-6">
                         <div className="w-24 flex-shrink-0">
-                          <div className="font-['SuisseIntl'] text-[#0acdf0] text-sm">
+                          <div className="font-['SuisseIntl'] italic text-[#0acdf0] text-sm">
                             {item.time}
                           </div>
                         </div>
                         <div className="flex-1">
-                          <div className="font-['Editorial_Old'] text-xl mb-2">
+                          <div className="font-['Editorial_Old'] italic text-xl mb-2">
                             {item.title}
                           </div>
                           <div className="font-['SuisseIntl'] text-white/70 text-sm">

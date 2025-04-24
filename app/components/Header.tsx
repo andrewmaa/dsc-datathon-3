@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import MobileMenu from './MobileMenu'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 
 export default function Header() {
@@ -51,10 +52,10 @@ export default function Header() {
           isAuthenticated={isAuthenticated}
         />
         <header className="h-[--mast-height] w-full">
-          <div className="flex justify-between items-center h-full px-4 sm:px-10 md:px-12 py-3">
+          <div className="flex justify-between items-center h-full px-4 sm:px-10 md:px-12 py-4">
             <div className="flex items-center gap-8">
               <button 
-                className="block lg:hidden relative flex items-center text-white size-6 z-[60] cursor-pointer"
+                className="block lg:hidden relative flex items-center text-white size-6 z-[60] cursor-pointer mr-4"
                 title="Menu"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
@@ -68,10 +69,12 @@ export default function Header() {
                   </svg>
                 )}
               </button>
-              <Link href="/" className="flex items-center" onClick={handleLogoClick}>
-                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-3">dsc</span>
-                <span className="text-white text-3xl font-[300] flex items-center" style={{ marginTop: '-0.2em', marginRight: '0.5em' }}>×</span>
-                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center mr-7" style={{ marginTop: '-0.1em'}}>???</span>
+              <Link href="/" className="flex items-center gap-3" style={{ marginRight: '2em' }} onClick={handleLogoClick}>
+                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center">dsc</span>
+                <span className="text-white text-2xl font-[300] flex items-center" style={{ marginTop: '-0.1em' }}>×</span>
+                <Image src="https://andrewma.b-cdn.net/images/dsc/corner-logo.png" alt="Logo" width={50} height={50} style={{ marginTop: '-0.1em' }}/>
+                <span className="text-white text-2xl font-[300] flex items-center" style={{ marginTop: '-0.1em' }}>×</span>
+                <span className="text-white text-2xl font-book font-['SuisseIntl'] lowercase flex items-center">bac</span>
               </Link>
             </div>
 

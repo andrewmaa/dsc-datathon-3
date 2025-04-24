@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { AnimatedSection } from '../components/AnimatedSection'
+import { motion, AnimatePresence } from 'framer-motion'
 
 type FormData = {
   name: string
@@ -32,6 +33,7 @@ export default function RegisterPage() {
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [isOtherSelected, setIsOtherSelected] = useState(false)
+  const [showAgreement, setShowAgreement] = useState(false)
   
   const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>()
 
@@ -100,7 +102,7 @@ export default function RegisterPage() {
                 <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
                     Join us for an exciting datathon experience. Fill out the form below to register. <br /></p> 
-                    <div className="bg-blue-100 border border-blue-200 text-blue-700 px-4 py-3 rounded-xl relative mb-4 " role="alert">
+                    <div className="bg-[#0acdf0]/10 border border-[#0acdf0] text-[#0acdf0] px-4 py-3 rounded-xl relative mb-4 " role="alert">
                   <strong className="font-semibold">Note:</strong>
                   <br />
                   <span className="block sm:inline">You must be enrolled in an NYU undergraduate program to participate.</span>
@@ -332,11 +334,13 @@ export default function RegisterPage() {
                   <div className="mb-6">
                     <label className="block font-['SuisseIntl'] text-sm mb-2">Teammate Information</label>
                     <label className="block font-['SuisseIntl'] text-white/70 text-xs mb-5">Each person needs to be in a team of at least 3. We will have a social/mixer event on April 17 from 5-6pm in Leslie e-lab to meet other people looking for teammates!</label>
-                    
+                    <div className="bg-[#f23a3a]/10 border border-[#f23a3a] text-[#f23a3a] px-4 py-3 rounded-xl mb-4" role="alert">
+                      <span className="block sm:inline"><strong className="font-semibold">Teams must have 3-4 members to register.</strong> Before submitting this form, make sure you have at least 2 other teammates (for a minimum of 3 total members).</span>
+                    </div>
                     <div className="mt-3 space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="netid1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 1 NetID *</label>
+                          <label htmlFor="netid1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 NetID *</label>
                           <input
                             id="netid1"
                             type="text"
@@ -346,7 +350,7 @@ export default function RegisterPage() {
                           {errors.netid1 && <p className="text-red-400 text-sm mt-1">{errors.netid1.message}</p>}
                         </div>
                         <div>
-                          <label htmlFor="name1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 1 Full Name *</label>
+                          <label htmlFor="name1" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 Full Name *</label>
                           <input
                             id="name1"
                             type="text"
@@ -358,7 +362,7 @@ export default function RegisterPage() {
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="netid2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 NetID *</label>
+                          <label htmlFor="netid2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 NetID *</label>
                           <input
                             id="netid2"
                             type="text"
@@ -367,7 +371,7 @@ export default function RegisterPage() {
                           />
                         </div>
                         <div>
-                          <label htmlFor="name2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 2 Full Name *</label>
+                          <label htmlFor="name2" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 Full Name *</label>
                           <input
                             id="name2"
                             type="text"
@@ -378,7 +382,7 @@ export default function RegisterPage() {
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="netid3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 NetID</label>
+                          <label htmlFor="netid3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 4 NetID</label>
                           <input
                             id="netid3"
                             type="text"
@@ -387,7 +391,7 @@ export default function RegisterPage() {
                           />
                         </div>
                         <div>
-                          <label htmlFor="name3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 3 Full Name</label>
+                          <label htmlFor="name3" className="block font-['SuisseIntl'] text-sm mb-2">Teammate 4 Full Name</label>
                           <input
                             id="name3"
                             type="text"
@@ -407,7 +411,7 @@ export default function RegisterPage() {
                 <div className="space-y-6 mt-8">
                   <h2 className="font-['Editorial_Old'] text-4xl [font-feature-settings:'dlig'_1] mt-12">Confirmation</h2>
                   <div>
-                    <label htmlFor="confirmation" className="block font-['SuisseIntl'] text-sm mb-2">I am aware that I need to be there <span className="font-bold"> IN PERSON</span> for the start of the event at Silver Room 207 on Friday April 25th at 5:00 PM in order to participate. *</label>
+                    <label htmlFor="confirmation" className="block font-['SuisseIntl'] text-sm mb-2">I am aware that I need to be there <span className="font-bold"> IN PERSON</span> for the start of the event at Silver Center, Room 207 on Friday April 25th at 5:00 PM in order to participate. *</label>
                     <div className="flex items-center justify-between gap-2">
                       {['Yes', 'No'].map((option) => (
                         <label key={option} className="flex-1">
@@ -420,12 +424,129 @@ export default function RegisterPage() {
                           <div className="flex items-center justify-center h-10 w-full rounded-lg border border-white/20 peer-checked:border-[#0acdf0] peer-checked:bg-[#0acdf0]/10 cursor-pointer transition-colors">
                             <span className="font-['SuisseIntl'] text-sm text-white/90 peer-checked:text-white">{option}</span>
                           </div>
+                          
                         </label>
                       ))}
                     </div>
+                    
                     {errors.confirmation && <p className="text-red-400 text-sm mt-1">{errors.confirmation.message}</p>}
                     {watch('confirmation') === 'no' && <p className="text-red-400 text-sm mt-1">You must confirm attendance to submit the form.</p>}
                   </div>
+                  <div className="bg-[#0acdf0]/10 border border-[#0acdf0] text-[#0acdf0] px-4 py-3 rounded-xl mb-4" role="alert">
+                    <span className="block sm:inline">By submitting this form, you agree to follow corner&apos;s data usage agreement located <button type="button" onClick={(e) => { e.preventDefault(); setShowAgreement(true); }} className="font-semibold underline cursor-pointer">here</button>.</span>
+                  </div>
+
+                  {showAgreement && (
+                    <AnimatePresence>
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] min-h-[100dvh] w-screen"
+                        onClick={() => setShowAgreement(false)}
+                      >
+                        <motion.div 
+                          initial={{ scale: 0.9, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0.9, opacity: 0 }}
+                          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                          className="bg-[#191919] p-4 rounded-lg max-w-xl mx-4 max-h-[80dvh] overflow-y-auto"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          <div className="flex justify-between items-center mb-4">
+                            <h3 className="text-2xl font-['Editorial_Old']">Data Usage Agreement</h3>
+                            <motion.button 
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                              onClick={() => setShowAgreement(false)} 
+                              className="text-white/70 hover:text-white cursor-pointer"
+                            >
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </motion.button>
+                          </div>
+                          <div className="space-y-2 font-['SuisseIntl'] text-sm">
+                            <p className="text-white/70">This Data Usage Agreement (the &ldquo;Agreement&rdquo;) is entered into by and between:</p>
+                            <p className="font-semibold">Corner International Inc. (&ldquo;Corner&rdquo;) and Participant (any student, team, or individual participating in the NYU Hackathon)</p>
+
+                            <h4 className="text-lg font-semibold mt-4">1. PURPOSE AND SCOPE</h4>
+                            <p>This Agreement governs the use of proprietary data (&ldquo;Dataset&rdquo;) provided by Corner to Participant solely for the purpose of participating in the NYU Hackathon (&ldquo;Hackathon&rdquo;).</p>
+
+                            <h4 className="text-lg font-semibold mt-4">2. DATASET DESCRIPTION</h4>
+                            <p>The Dataset contains anonymized information provided by Corner for use during the Hackathon. This Dataset represents proprietary business information and trade secrets of Corner.</p>
+
+                            <h4 className="text-lg font-semibold mt-4">3. PERMITTED USE</h4>
+                            <p>Participant is granted a limited, non-exclusive, non-transferable right to use the Dataset solely for:</p>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Participating in the Hackathon</li>
+                              <li>Analyzing data and patterns</li>
+                              <li>Developing insights and presentations for the Hackathon</li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">4. RESTRICTIONS</h4>
+                            <p>Participant shall NOT:</p>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Share, distribute, publish, or transfer the Dataset to any third party</li>
+                              <li>Use the Dataset for any commercial purpose</li>
+                              <li>Attempt to re-identify or de-anonymize any individuals in the Dataset</li>
+                              <li>Retain, store, or use the Dataset after the conclusion of the Hackathon</li>
+                              <li>Create derivative datasets for use outside of the Hackathon</li>
+                              <li>Use the Dataset for any purpose other than participation in the Hackathon</li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">5. CONFIDENTIALITY</h4>
+                            <p>Participant agrees to:</p>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Maintain the Dataset in strict confidence</li>
+                              <li>Implement appropriate security measures to prevent unauthorized access</li>
+                              <li>Not disclose any part of the Dataset except as required for Hackathon participation</li>
+                              <li>Notify Corner immediately of any unauthorized access or disclosure</li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">6. INTELLECTUAL PROPERTY</h4>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>The Dataset remains the exclusive property of Corner</li>
+                              <li>No rights, title, or interest in the Dataset are transferred to Participant</li>
+                              <li>Corner retains all intellectual property rights in the Dataset</li>
+                              <li>Any outcomes, analysis results, insights, code, presentations, or other materials developed during the Hackathon using the Dataset may be used by Corner for any purpose</li>
+                              <li>Subject to the above, Participant&apos;s analysis results and insights developed during the Hackathon belong to Participant, subject to the confidentiality obligations in this Agreement</li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">7. TERM AND TERMINATION</h4>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>This Agreement is effective from the date of access to the Dataset</li>
+                              <li>This Agreement terminates at the conclusion of the Hackathon</li>
+                              <li>Upon termination, Participant shall immediately:
+                                <ul className="list-disc pl-5 mt-2 space-y-2">
+                                  <li>Cease all use of the Dataset</li>
+                                  <li>Delete all copies of the Dataset</li>
+                                  <li>Certify in writing that all Dataset materials have been destroyed</li>
+                                </ul>
+                              </li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">8. LIABILITY AND INDEMNIFICATION</h4>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>The Dataset is provided &ldquo;as is&rdquo; without warranty of any kind</li>
+                              <li>Participant shall indemnify Corner against any claims arising from Participant&apos;s use of the Dataset</li>
+                              <li>Participant is liable for any breach of this Agreement</li>
+                            </ul>
+
+                            <h4 className="text-lg font-semibold mt-4">9. GENERAL PROVISIONS</h4>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>This Agreement constitutes the entire understanding between the parties</li>
+                              <li>This Agreement is binding upon Participant</li>
+                              <li>This Agreement may only be modified in writing</li>
+                              <li>Any disputes arising from this Agreement shall be resolved under the laws of New York</li>
+                            </ul>
+
+                            <p className="mt-6 font-semibold">By accessing or using the Dataset, Participant acknowledges that they have read, understood, and agree to be bound by this Agreement.</p>
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    </AnimatePresence>
+                  )}
 
                 <div className="pt-4">
                   <button

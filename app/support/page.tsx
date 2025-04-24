@@ -36,28 +36,16 @@ export default function SupportPage() {
                 <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4"> {/* Applied specific size/leading */}
                   <p>
                     It&apos;s easy to get lost in the data. 
-                    If you experience any issues, please reach out to us and we&apos;ll do our best to help.
-                    Remember that all participants are required to adhere to the guidelines set out in the {' '}
+                    If you experience any issues, please reach out to us on Discord or <a href="mailto:datascienceclubnyu@gmail.com" className="underline underline-offset-2 decoration-1 hover:decoration-2"> our email</a> and we&apos;ll do our best to help.
+                    Remember that all participants are required to adhere to {' '}
                     <a 
-                      href="https://google.com" 
+                      href="/agreement" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="underline underline-offset-2 decoration-1 hover:decoration-2" // Basic link styling
                     >
-                      Code of Conduct
+                      Corner&apos;s Data Usage Agreement
                     </a>.
-                  </p>
-                  <p>
-                    If you have a feature request then head over{' '}
-                    <a 
-                      href="https://orchid.nolt.io/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="underline hover:text-blue-400 transition-colors" // Basic link styling
-                    >
-                      here
-                    </a>{' '}
-                    and let us know what you think.
                   </p>
                 </div>
               </AnimatedSection>
@@ -138,12 +126,12 @@ export default function SupportPage() {
               <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
                 {([
                   {
-                    question: "How do I register for the event?",
-                    answer: `<p>Registration is now open! To secure your spot, please visit our <a href="https://www.eventbrite.com/e/data-science-datathon-tickets-1000000000000000000" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">Eventbrite page</a> and follow the instructions to complete your registration. No experience is required, and we welcome students from all backgrounds and disciplines.</p>`
+                    question: "Intro to ML Workshop Notebook",
+                    answer: `<p>The link to this resource is located <a href="https://colab.research.google.com/drive/1lPrcDFi5VIoYW798oxoCpSZCodEB4LCu" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>.</p>`
                   },
                   {
-                    question: "What is the event schedule?",
-                    answer: `<p>The event will be held on April 25-26, 2025. The schedule will be posted on the event website closer to the event date.</p>`
+                    question: "Pre-Processing Workshop Github Repository",
+                    answer: `<p>The link to this resource is located <a href="https://github.com/buzgalbraith/data-processing-workshop/tree/main" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>.</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
@@ -175,12 +163,8 @@ export default function SupportPage() {
               <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
                 {([
                   {
-                    question: "How do I register for the event?",
-                    answer: `<p>Registration is now open! To secure your spot, please visit our <a href="https://www.eventbrite.com/e/data-science-datathon-tickets-1000000000000000000" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">Eventbrite page</a> and follow the instructions to complete your registration. No experience is required, and we welcome students from all backgrounds and disciplines.</p>`
-                  },
-                  {
-                    question: "What is the event schedule?",
-                    answer: `<p>The event will be held on April 25-26, 2025. The schedule will be posted on the event website closer to the event date.</p>`
+                    question: "TBA",
+                    answer: `<p>TBA</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
