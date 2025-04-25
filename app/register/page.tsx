@@ -132,6 +132,9 @@ export default function RegisterPage() {
               <div className="space-y-8">
                 {/* Personal Information */}
                 <div className="space-y-6">
+                <div className="bg-[#0acdf0]/10 border border-[#0acdf0] text-[#0acdf0] px-4 py-3 rounded-xl mb-4" role="alert">
+                    <span className="block sm:inline">Don&apos;t have a team? Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSddOoInxKywNuDGjm85f54rxu4q34PVRDZtDd_6xVXw0VoVMQ/viewform" className="underline underline-offset-2 decoration-1 hover:decoration-2">this form</a> instead. </span>
+                  </div>
                   <h2 className="font-['Editorial_Old'] text-4xl [font-feature-settings:'dlig'_1] mt-12">Personal Information</h2>
                   
                   
@@ -333,7 +336,7 @@ export default function RegisterPage() {
                   </div>
                   <div className="mb-6">
                     <label className="block font-['SuisseIntl'] text-sm mb-2">Teammate Information</label>
-                    <label className="block font-['SuisseIntl'] text-white/70 text-xs mb-5">Each person needs to be in a team of at least 3. We will have a social/mixer event on April 17 from 5-6pm in Leslie e-lab to meet other people looking for teammates!</label>
+                    <label className="block font-['SuisseIntl'] text-white/70 text-xs mb-5">Each person needs to be in a team of at least 3. Don&apos;t have a team? Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSddOoInxKywNuDGjm85f54rxu4q34PVRDZtDd_6xVXw0VoVMQ/viewform" className="underline underline-offset-2 decoration-1 hover:decoration-2">this form</a> instead. </label>
                     <div className="bg-[#f23a3a]/10 border border-[#f23a3a] text-[#f23a3a] px-4 py-3 rounded-xl mb-4" role="alert">
                       <span className="block sm:inline"><strong className="font-semibold">Teams must have 3-4 members to register.</strong> Before submitting this form, make sure you have at least 2 other teammates (for a minimum of 3 total members).</span>
                     </div>

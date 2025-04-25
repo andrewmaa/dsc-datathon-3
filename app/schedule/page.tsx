@@ -27,7 +27,7 @@ const schedule: DaySchedule[] = [
         time: '5:00 PM',
         title: 'Kick-Off Ceremony',
         description: 'Welcome remarks, rules, theme announcement, and logistics overview.',
-        location: 'Silver 207'
+        location: 'Silver Center, Room 207'
       },
       {
         time: '6:00 PM',
@@ -39,7 +39,7 @@ const schedule: DaySchedule[] = [
         time: '7:00 PM',
         title: 'Opening Dinner',
         description: 'Catered by Surross Thai Bistro :)',
-        location: 'Bobst LL138'
+        location: 'Silver Center, Room 207'
       },
       {
         time: '8:00 PM',

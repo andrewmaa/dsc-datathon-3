@@ -417,7 +417,7 @@ won&apos;t find on other maps.</p>
                   date: "Saturday, April 26",
                   time: "6:00 PM",
                   title: "Dinner & Closing Remarks",
-                  location: "TBA",
+                  location: "Bobst LL138",
                   description: "TBA",
                   calendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Datathon%3A+Dinner+%26+Closing+Remarks&dates=20250426T180000/20250426T190000&location=TBA&details=TBA"
                 }

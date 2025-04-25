@@ -59,7 +59,7 @@ function LoginForm() {
                   </span>
                 </h2>
                 <p className="font-['SuisseIntl'] text-base sm:text-lg text-left opacity-100 pt-4 pb-4">
-                  Sorry, you don&apos;t have access to this page yet. We&apos;ll be releasing more details about the event soon. In the meantime, you can <a href="/register" className="underline underline-offset-2 decoration-1 hover:decoration-2">register for the event</a> and follow us on <a href="https://www.instagram.com/dscnyu/" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Instagram</a> and join our <a href="https://discord.gg/6m7GrGHgKH" target="_blank" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> for updates.
+                  You must be registered for the datathon to access this page. The password will be released via Discord.
                 </p>
                 <div className="mt-8">
                   <CountdownTimer />
@@ -71,7 +71,7 @@ function LoginForm() {
               <AnimatedSection delay={0.2}>
                 <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4">
                   <p>
-                    Enter the password to access the event details.
+                    Enter the password to access the event details. Do not share this password with anyone.
                   </p>
                 </div>
                 <form onSubmit={handleSubmit} className="mt-8">

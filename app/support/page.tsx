@@ -155,32 +155,43 @@ export default function SupportPage() {
             <div className="max-w-md lg:max-w-lg">
               <AnimatedSection delay={0.2}>
                 <h2 className="font-['Editorial_Old'] text-4xl md:text-5xl lg:text-6xl font-[200] leading-tight tracking-[-0.04em] [font-feature-settings:'dlig'_1] mb-8">
-                  Sponsors
+                  Spaces and Location Information
                 </h2>
               </AnimatedSection>
             </div>
             <AnimatedSection delay={0.4}>
-              <Accordion type="multiple" className="space-y-0 relative before:absolute before:inset-x-0 before:top-0">
-                {([
-                  {
-                    question: "TBA",
-                    answer: `<p>TBA</p>`
-                  }
-                ] as const).map((item, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
-                    <div className="absolute inset-x-0 top-0 border-t border-white/20 group-hover:border-white transition-colors duration-300" />
-                    <AccordionTrigger className="font-['SuisseIntl'] text-base sm:text-lg text-left hover:no-underline hover:opacity-100 opacity-60 pt-4 pb-4 cursor-pointer">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base pb-8">
-                      <div dangerouslySetInnerHTML={{ __html: item.answer }} />
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+              <div className="space-y-6">
+                <div className="border border-white/20 rounded-lg p-6 hover:border-white/40 transition-colors">
+                  <h3 className="font-['SuisseIntl'] text-xl mb-4">Kickoff Event</h3>
+                  <div className="space-y-2">
+                    <p className="font-['SuisseIntl'] text-white/90"><span className="font-bold">Location:</span> Silver 207</p>
+                    <p className="font-['SuisseIntl'] text-white/90"><span className="font-bold">Time:</span> 5pm (room is available for use until 8pm)</p>
+                  </div>
+                </div>
+
+                <div className="border border-white/20 rounded-lg p-6 hover:border-white/40 transition-colors">
+                  <h3 className="font-['SuisseIntl'] text-xl mb-4">Study Spaces</h3>
+                  <div className="space-y-2">
+                    <p className="font-['SuisseIntl'] text-white/90"><span className="font-bold">Locations:</span> Bobst LL112, LL113, LL114, LL138</p>
+                    <p className="font-['SuisseIntl'] text-white/90"><span className="font-bold">Availability:</span></p>
+                    <ul className="font-['SuisseIntl'] text-white/90 list-disc pl-5">
+                      <li>Friday, April 25: 5-11:30pm</li>
+                      <li>Saturday, April 26: 6am-11:30pm</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="border border-white/20 rounded-lg p-6 hover:border-white/40 transition-colors">
+                  <h3 className="font-['SuisseIntl'] text-xl mb-4">Designated Locations</h3>
+                  <div className="space-y-2">
+                    <p className="font-['SuisseIntl'] text-white/90">Day 1: Silver 207</p>
+                    <p className="font-['SuisseIntl'] text-white/90">Day 2: Bobst LL138</p>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
+          </div>
         </div>
-      </div>
       </section>
       <Footer />
     </main>

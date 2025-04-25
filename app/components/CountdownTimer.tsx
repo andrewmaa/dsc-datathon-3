@@ -12,7 +12,7 @@ export default function CountdownTimer() {
   })
 
   useEffect(() => {
-    const targetDate = new Date('2025-04-25T09:00:00')
+    const targetDate = new Date('2025-04-25T17:00:00')
 
     const updateCountdown = () => {
       const now = new Date()

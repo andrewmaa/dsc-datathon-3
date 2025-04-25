@@ -125,28 +125,6 @@ export default function SubmissionsPage() {
                     {errors.teamName && <p className="text-red-400 text-sm mt-1">{errors.teamName.message}</p>}
                   </div>
 
-                  <div>
-                    <label className="block font-['SuisseIntl'] text-sm mb-2">
-                      By marking &quot;Yes&quot;, you confirm that you and your team adhered to corner&apos;s data usage agreement linked <a href="/agreement" className="underline">here</a> throughout the entirety of the datathon and will continue to do so thereafter. Note that by violating the data usage agreement, you risk getting disqualified from the datathon and future DSC events. *
-                    </label>
-                    <div className="flex items-center justify-between gap-2 mt-2">
-                      {['Yes', 'No'].map((option) => (
-                        <label key={option} className="flex-1">
-                          <input
-                            type="radio"
-                            value={option.toLowerCase()}
-                            {...register('dataAgreement', { required: 'You must agree to corner&apos;s data usage agreement' })}
-                            className="sr-only peer"
-                          />
-                          <div className="flex items-center justify-center h-10 w-full rounded-lg border border-white/20 peer-checked:border-[#0acdf0] peer-checked:bg-[#0acdf0]/10 cursor-pointer transition-colors">
-                            <span className="font-['SuisseIntl'] text-sm text-white/90 peer-checked:text-white">{option}</span>
-                          </div>
-                        </label>
-                      ))}
-                    </div>
-                    {errors.dataAgreement && <p className="text-red-400 text-sm mt-1">{errors.dataAgreement.message}</p>}
-                    {watch('dataAgreement') === 'no' && <p className="text-red-400 text-sm mt-1">You must agree to corner&apos;s data usage agreement to submit the form.</p>}
-                  </div>
 
                   {[
                     { id: 'netId1', label: 'NetID of team member #1 *', required: true },
@@ -198,7 +176,7 @@ export default function SubmissionsPage() {
 
                   <div>
                     <label htmlFor="githubRepo" className="block font-['SuisseIntl'] text-sm mb-2">
-                      A link to your github repo. Please note that in accordance with corner&apos;s data usage agreement, your repo MUST be private and MUST NOT contain the actual data. *
+                    Please upload your cleaned up jupyter notebook with commented code. *
                     </label>
                     <input
                       id="githubRepo"
@@ -275,6 +253,29 @@ export default function SubmissionsPage() {
                       rows={4}
                       className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white focus:border-[#0acdf0] focus:outline-none"
                     />
+                  </div>
+
+                  <div>
+                    <label className="block font-['SuisseIntl'] text-sm mb-2">
+                      By marking &quot;Yes&quot;, you confirm that you and your team adhered to corner&apos;s data usage agreement linked <a href="/agreement" className="underline">here</a> throughout the entirety of the datathon and will continue to do so thereafter. Note that by violating the data usage agreement, you risk getting disqualified from the datathon and future DSC events. *
+                    </label>
+                    <div className="flex items-center justify-between gap-2 mt-2">
+                      {['Yes', 'No'].map((option) => (
+                        <label key={option} className="flex-1">
+                          <input
+                            type="radio"
+                            value={option.toLowerCase()}
+                            {...register('dataAgreement', { required: 'You must agree to corner&apos;s data usage agreement' })}
+                            className="sr-only peer"
+                          />
+                          <div className="flex items-center justify-center h-10 w-full rounded-lg border border-white/20 peer-checked:border-[#0acdf0] peer-checked:bg-[#0acdf0]/10 cursor-pointer transition-colors">
+                            <span className="font-['SuisseIntl'] text-sm text-white/90 peer-checked:text-white">{option}</span>
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                    {errors.dataAgreement && <p className="text-red-400 text-sm mt-1">{errors.dataAgreement.message}</p>}
+                    {watch('dataAgreement') === 'no' && <p className="text-red-400 text-sm mt-1">You must agree to corner&apos;s data usage agreement to submit the form.</p>}
                   </div>
                 </div>
 
