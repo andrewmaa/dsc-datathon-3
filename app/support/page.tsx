@@ -132,6 +132,10 @@ export default function SupportPage() {
                   {
                     question: "Pre-Processing Workshop Github Repository",
                     answer: `<p>The link to this resource is located <a href="https://github.com/buzgalbraith/data-processing-workshop/tree/main" target="_blank" class="underline underline-offset-2 decoration-1 hover:decoration-2">here</a>.</p>`
+                  },
+                  {
+                    question: "Will there be technical support during the event?",
+                    answer: `<p>Yes, we will have graduate students present from 12-6pm on April 26th in Bobst LL138 if anyone needs help with their solution. If you have any questions or issues, you can also reach out to us on Discord.</p>`
                   }
                 ] as const).map((item, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="group relative" id={`faq-${index}`}>
