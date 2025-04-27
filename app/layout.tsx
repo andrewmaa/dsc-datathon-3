@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DSC@NYU Datathon 2025",
+  title: "Datathon 2025",
   description: "Find answers from raw data.",
 };
 

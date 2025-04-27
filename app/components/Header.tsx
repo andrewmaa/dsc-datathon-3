@@ -104,6 +104,13 @@ export default function Header() {
                   </li>
                   <li className="flex items-center h-full group">
                     <div className="relative uppercase">
+                      <Link href="/prizes" className="hover:text-[#0acdf0] font-mono transition-colors relative flex items-center gap-1.5 py-3 px-1.5 rounded-sm parent-link">
+                        <span className="flex-shrink-0">Prizes</span>
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="flex items-center h-full group">
+                    <div className="relative uppercase">
                       <Link 
                         href="/submissions" 
                         className="scale-[1.01] inline-block uppercase font-mono text-sm/none outline-none disabled:border group/cta relative border-2 transition-colors border-transparent rounded-[64px]"

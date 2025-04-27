@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <nav className="grid grid-cols-2 gap-5 text-black-40 text-xs/none font-mono uppercase">
               <ul className="space-y-6 md:space-y-3">
-                <li>
+              <li>
                   <Link href="/agreement" className="hover:underline underline-offset-2">
                     <span>Data Usage Agreement</span>
                   </Link>

@@ -36,7 +36,7 @@ export default function SupportPage() {
                 <div className="font-['SuisseIntl'] text-[18px] leading-[22px] space-y-4"> {/* Applied specific size/leading */}
                   <p>
                     It&apos;s easy to get lost in the data. 
-                    If you experience any issues, please reach out to us on Discord or <a href="mailto:datascienceclubnyu@gmail.com" className="underline underline-offset-2 decoration-1 hover:decoration-2"> our email</a> and we&apos;ll do our best to help.
+                    If you experience any issues, please reach out to us on <a href="https://discord.gg/zxxCatRvBt" className="underline underline-offset-2 decoration-1 hover:decoration-2">Discord</a> or <a href="mailto:datascienceclubnyu@gmail.com" className="underline underline-offset-2 decoration-1 hover:decoration-2"> our email</a> and we&apos;ll do our best to help.
                     Remember that all participants are required to adhere to {' '}
                     <a 
                       href="/agreement" 

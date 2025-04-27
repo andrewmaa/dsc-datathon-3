@@ -88,7 +88,7 @@ export default function Home() {
       <section className="relative z-8" style={{ backgroundColor: '#1099e3' }}>
         <div className="h-full flex flex-col lg:flex-row">
           <div className="basis-4/7 h-full group">
-            <div className="inline-flex w-full h-full relative p-4 sm:p-6 md:p-8 rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/48]">
+            <div className="inline-flex w-full h-full relative p-4 sm:p-6 md:p-8 rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] aspect-[164/151] sm:aspect-[36/25] lg:aspect-[61/68]">
               <div className="block relative z-8 w-full h-full rounded-[32px] sm:rounded-[48px] lg:rounded-[100px] overflow-hidden bg-white/10 backdrop-blur-sm">
                 <div className="flex flex-col justify-center items-center h-full p-4 sm:p-6 text-white mb-4 sm:mb-6">
                   <div className="text-center mb-4 sm:mb-6">
@@ -132,9 +132,8 @@ export default function Home() {
                   </h2>
                   <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10">
                     <div className="font-['SuisseIntl'] text-sm md:text-base text-white lg:text-left">
-                      <p>Take unstructured data and turn it into actionable insights. Our datathon challenges you to build solutions that matter, using cutting-edge tools and techniques in data science and machine learning.</p>
-                      <p className="mt-4">Join us in creating technology that makes a real difference.</p>
-                    </div>
+                      <p>NYU Data Science Club, founded in 2019, brings NYU students majoring or minoring in data science together through all sorts of events-workshops on some of the latest technologies, relaxing socials that allow students to mingle and meet new friends, and huge, once in a lifetime opportunities, such as our annual project expo and datathon. </p>
+                      <p className="mt-4">The datathon, open to all undergraduate NYU students, is a chance for anyone to showcase their data science skills to industry professionals given a real world data science problem. Winners will receive hundreds of dollars worth of prizes, loads of swag, and mentorship from our sponsor.</p>                    </div>
                     <div className="lg:text-left">
                       <button
                         className="scale-[1.01] cursor-pointer inline-block uppercase font-mono text-sm/none outline-none group/cta relative border-2 transition-colors border-transparent rounded-[64px] focus-visible:border-neon-green"
@@ -177,23 +176,25 @@ export default function Home() {
                   </h2>
                   <div className="grid grid-cols-1 gap-10 md:gap-6 lg:gap-10">
                     <div className="font-['SuisseIntl'] text-sm md:text-base text-black">
-                      <p>Transform your data analysis with our comprehensive toolkit. Build models that not only process data but understand context, create visualizations that tell stories, and develop solutions that scale. <br /><br />Add machine learning for insights that would make a data scientist proud.</p>
+                      <p>Transform your data analysis with our comprehensive toolkit. Build models that not only process data but understand context, create visualizations that tell stories, and develop solutions that scale. <br /></p>
+                      <br />
+                      <p>Track information will be released for registered participants after kickoff.</p>
                     </div>
                     
                     <div>
-                      <button
-                        className="scale-[1.01] inline-block uppercase font-mono text-sm/none outline-none disabled:border group/cta relative border-2 transition-colors border-transparent rounded-[64px] focus-visible:border-neon-green disabled:opacity-50 disabled:cursor-not-allowed"
-                        disabled
+                    <Link
+                        href="/tracks"
+                        target=""
+                        className="scale-[1.01] inline-block uppercase font-mono text-sm/none outline-none disabled:border group/cta relative border-2 transition-colors border-transparent rounded-[64px] focus-visible:border-neon-green"
                       >
-                        <div className="absolute top-0 left-0 w-full h-full rounded-[64px] group-hover/cta:blur-[2px] group-hover/cta:scale-105 transition-all duration-500 bg-black hover:bg-black/80 disabled:bg-black/20 disabled:border-black/20" />
-                        <div className="inline-flex gap-2 items-center justify-center h-10 px-4 relative min-w-[120px] text-white disabled:text-black-40">
-                          <span className="m-center-text !leading-none">Learn More</span>
-
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4">
-                            <path d="M12.6667 7.33333H12V5.33333C12 2.9401 10.0599 1 7.66667 1C5.27343 1 3.33333 2.9401 3.33333 5.33333V7.33333H2.66667C2.29848 7.33333 2 7.63181 2 8V13.3333C2 13.7015 2.29848 14 2.66667 14H12.6667C13.0349 14 13.3333 13.7015 13.3333 13.3333V8C13.3333 7.63181 13.0349 7.33333 12.6667 7.33333ZM4.66667 5.33333C4.66667 3.49238 6.15871 2 8 2C9.84129 2 11.3333 3.49238 11.3333 5.33333V7.33333H4.66667V5.33333Z" fill="currentColor"/>
+                      <div className="absolute top-0 left-0 w-full h-full rounded-[64px] group-hover/cta:blur-[2px] group-hover/cta:scale-105 transition-all duration-500 bg-black hover:bg-black/80 disabled:bg-black/20 disabled:border-black/20" />
+                      <div className="inline-flex gap-2 items-center justify-center h-10 px-4 relative min-w-[120px] text-white disabled:text-black-40">
+                        <span className="m-center-text !leading-none">View the Tracks</span>
+                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 transition-transform duration-500 group-hover/cta:translate-x-1">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M8.30724 2.86177C8.56759 2.60142 8.9897 2.60142 9.25005 2.86177L13.9167 7.52843C14.1771 7.78878 14.1771 8.21089 13.9167 8.47124L9.25005 13.1379C8.9897 13.3983 8.56759 13.3983 8.30724 13.1379C8.04689 12.8776 8.04689 12.4554 8.30724 12.1951L11.8358 8.6665H4.11198C3.74379 8.6665 3.44531 8.36803 3.44531 7.99984C3.44531 7.63165 3.74379 7.33317 4.11198 7.33317H11.8358L8.30724 3.80458C8.04689 3.54423 8.04689 3.12212 8.30724 2.86177Z" fill="currentColor"/>
                           </svg>
                         </div>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

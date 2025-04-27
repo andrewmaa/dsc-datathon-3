@@ -4,11 +4,12 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { AnimatedSection } from '../components/AnimatedSection'
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface ScheduleItem {
   time: string
   title: string
-  description: string
+  description: string | React.ReactNode
   location?: string
 }
 
@@ -24,34 +25,46 @@ const schedule: DaySchedule[] = [
     date: 'April 25, 2025',
     events: [
       {
-        time: '5:00 PM',
-        title: 'Kick-Off Ceremony',
-        description: 'Welcome remarks, rules, theme announcement, and logistics overview.',
+        time: '4:45 PM',
+        title: 'Datathon Kick-Off',
+        description: 'Welcome to the DSC x Corner x BAC Datathon! Join us in Silver Room 207 at 5pm as we kick things off with introductions, the prompts, datasets, and prize packages!',
         location: 'Silver Center, Room 207'
       },
       {
         time: '6:00 PM',
-        title: 'Datathon Officially Begins',
-        description: 'Participants move to Bobst classrooms (LL112, LL113, LL114, LL138).',
+        title: 'Datathon Officially Begins & Datasets are Released',
+        description: (
+          <>
+            Available spaces are located {' '}
+            <Link href="/support" className="text-[#0acdf0] hover:underline">
+              here
+            </Link>
+            . Datasets are released {' '}
+            <Link href="/tracks" className="text-[#0acdf0] hover:underline">
+              here
+            </Link>
+            .
+          </>
+        ),
         location: 'Bobst Classrooms'
       },
       {
         time: '7:00 PM',
         title: 'Opening Dinner',
-        description: 'Catered by Surross Thai Bistro :)',
+        description: 'Dinner is available in Silver 207! Come over for some delicious Thai food catered by Surross Thai Bistro.',
         location: 'Silver Center, Room 207'
       },
       {
         time: '8:00 PM',
-        title: 'Best Team Name & Logo Contest',
-        description: 'Spirit Challenge #1.',
-        location: 'Bobst Classrooms'
+        title: 'Best Team Name & Slogan Contest',
+        description: 'As a team, please create a team name and slogan that would represent your team.  Reply in a thread under the respective Discord message with your "TEAM NAME: TEAM SLOGAN".',
+        location: 'Virtual: Discord Server'
       },
       {
         time: '10:00 PM',
         title: 'Funniest Hallucination',
-        description: 'Spirit Challenge #2.',
-        location: 'Bobst Classrooms'
+        description: 'Share the wildest, weirdest, or wackiest hallucination you\'ve seen during this Datathon. The more unhinged, the better. Bonus if it made you laugh out loud or question reality. Reply in a thread under the respective Discord message with your Team Name and a screenshot of the hallucination. ',
+        location: 'Virtual: Discord Server'
       }
     ]
   },
@@ -62,38 +75,44 @@ const schedule: DaySchedule[] = [
       {
         time: '10:00 AM',
         title: 'Datathon Scavenger Hunt',
-        description: 'Spirit Challenge #3.',
-        location: 'Bobst Library'
+        description: 'Want to get up and stretch your legs? Our spirit scavenger hunt is starting shortly. Head to Bobst LL138 as the starting point and for further instructions. Small prizes available – if you\'re quick enough!',
+        location: 'Bobst LL138'
       },
       {
         time: '12:00 PM',
         title: 'Brunch',
-        description: 'Bagels, cream cheese, coffee & tea.',
+        description: 'Feeling Hungry? Tired after staying up all night? We\'ve got you covered. Swing by Bobst LL138 to grab a bagel and some coffee!',
         location: 'Bobst LL138'
       },
       {
         time: '12:00 PM',
-        title: 'Most Unique Corner List',
-        description: 'Spirit Challenge #4.',
-        location: 'Bobst Classrooms'
+        title: 'Data Science Trivia',
+        description: 'Getting tired of working on your solution? Mix things up and check out Bobst LL138 for some fun Data Science Trivia! Small prizes included!',
+        location: 'Bobst LL138'
       },
       {
         time: '2:00 PM',
-        title: 'Data Science Trivia',
-        description: 'Spirit Challenge #5.',
-        location: 'Bobst Classrooms'
+        title: 'Most Unique Corner List',
+        description: 'Had a bit of time to experiment with Corner\'s App? Think your list is better curated than everyone else out there? Let\'s put it to the test – share your most unique corner list and let\'s see who really has the best taste! Reply in a thread under the respective Discord message with your Team Name and a screenshot of your corner list.',
+        location: 'Virtual: Discord Server'
       },
       {
         time: '4:00 PM',
         title: 'Datathon Meme Contest',
-        description: 'Spirit Challenge #6.',
-        location: 'Bobst Classrooms'
+        description: 'Create and share your funniest meme from this Datathon! Bonus points if the meme(s) includes at least 1 team member in the photo!!! Reply in a thread under the respective Discord message with your Team Name with the image attached. ',
+        location: 'Virtual: Discord Server'
       },
       {
         time: '6:00 PM',
-        title: 'Datathon Ends & Dinner',
-        description: 'Catered by Fumo Kips Bay (Pasta).',
-        location: 'Bobst LL138'
+        title: 'Submission Period Ends',
+        description: 'The submission period ends at 6pm. Please make sure to submit your final solution before then.',
+        location: 'Virtual: Submissions Page'
+      },
+      {
+        time: '6:00 PM',
+        title: 'Closing Thoughts from DSC, BAC, and Corner & Dinner',
+        description: 'Dinner is served in Bobst LL138. Prizes for Spirit Challenges will also be distributed. Thank you all for participating in the DSC x BAC Datathon!',
+        location: 'Silver Center, Room 207'
       }
     ]
   }
@@ -176,7 +195,7 @@ export default function SchedulePage() {
                             {item.title}
                           </div>
                           <div className="font-['SuisseIntl'] text-white/70 text-sm">
-                            {item.description}
+                            {typeof item.description === 'string' ? item.description : item.description}
                           </div>
                           {item.location && (
                             <div className="font-['SuisseIntl'] text-white/50 text-xs mt-2">

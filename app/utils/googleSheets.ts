@@ -33,8 +33,7 @@ type SubmissionData = {
   challenge: string
   githubRepo: string
   youtubeLink: string
-  slidesLink: string
-  reportLink: string
+  hostedLink: string
   comments: string
   feedback: string
   timestamp: string
@@ -155,8 +154,7 @@ export async function appendToSubmissionsSheet(data: SubmissionData) {
         'challenge',
         'githubRepo',
         'youtubeLink',
-        'slidesLink',
-        'reportLink',
+        'hostedLink',
         'comments',
         'feedback',
         'timestamp'

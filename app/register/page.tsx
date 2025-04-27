@@ -41,14 +41,14 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <AnimatedSection>
+            <AnimatedSection>
             <div className="bg-[#f23a3a]/10 border border-[#f23a3a] p-6 rounded-lg max-w-2xl mx-auto">
               <h3 className="text-2xl font-['Editorial_Old'] [font-feature-settings:'dlig'_1] mb-4">Registration Closed</h3>
               <p className="font-['SuisseIntl'] text-[#f23a3a]">
                 We&apos;re sorry, but registration for this event has now closed. Thank you for your interest in participating. We hope to see you at our next event!
               </p>
-            </div>
-          </AnimatedSection>
+              </div>
+            </AnimatedSection>
         </div>
       </section>
 
